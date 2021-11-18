@@ -17,11 +17,14 @@ import QuestionShow from '../pages/QuestionShow';
 
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+  }
   render () {
     return (
       <>
         <Router>
-          <Header />
+          <Header {...this.props} />
             <Switch>
               <Route exact path='/' component={ Home }/>
               <Route path='/about' component={ AboutUsPage }/>
