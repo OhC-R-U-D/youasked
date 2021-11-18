@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Contact extends Component {
+export default class Home extends Component {
     render() {
         return (
             <div>
-                This is the Contact Page   
+                This is the landing page
             </div>
         )
     }
