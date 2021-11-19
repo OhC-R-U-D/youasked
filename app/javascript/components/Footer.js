@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
-import { NavItem, Nav } from 'reactstrap'
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+import { NavItem, Nav } from "reactstrap";
 import { Navbar } from "reactstrap";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -26,4 +26,3 @@ export default class Footer extends Component {
         );
     }
 }
-
