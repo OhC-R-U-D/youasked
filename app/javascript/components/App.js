@@ -15,6 +15,18 @@ import QuestionNew from "../pages/QuestionNew";
 import QuestionShow from "../pages/QuestionShow";
 
 class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+      questions:[],
+    }
+  }
+  questionRead=()=> {
+    fetch("/questions")
+    .then(response => response.json())
+    .then(payload => this.setState({ questions: payload }))
+    .catch(errors => console.log("Questions Index Errors:", errors))
+  }
   render() {
     return (
       <BrowserRouter>
