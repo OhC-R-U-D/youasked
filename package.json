@@ -36,7 +36,8 @@
   },
   "jest": {
     "roots": [
-      "app/javascript/components"
+      "app/javascript/components",
+      "app/javascript/pages"
     ]
   }
 }
