@@ -21,6 +21,9 @@ class App extends React.Component {
       questions:[],
     }
   }
+  componentDidMount() {
+    this.questionRead();
+  }
   questionRead=()=> {
     fetch("/questions")
     .then(response => response.json())
@@ -28,6 +31,7 @@ class App extends React.Component {
     .catch(errors => console.log("Questions Index Errors:", errors))
   }
   render() {
+    console.log(this.state.questions)
     return (
       <BrowserRouter>
         <Header {...this.props} />
