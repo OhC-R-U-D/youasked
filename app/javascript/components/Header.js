@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { NavLink } from "react-router-dom";
-//import HomeIcon from "@mui/icons-material/Home";
+import HomeIcon from "@mui/icons-material/Home";
 import { Navbar } from "reactstrap";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -24,14 +24,11 @@ export default class Header extends Component {
 
     return (
       <header>
-        <Navbar 
-        expand
-        fixed="top"
-        >
+        <Navbar expand fixed="top">
           <Stack spacing={2} direction="row">
-            {/* <NavLink to={"/"}>
+            <NavLink to={"/"}>
               <HomeIcon />
-            </NavLink> */}
+            </NavLink>
 
             <NavLink to={"/questionindex"}>
               <Button variant="text">All Questions</Button>

@@ -51,21 +51,15 @@ header {
   height: 100%;
 }
 
-.about-me-card-content{
+.about-me-card-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
 }
 
-.about-me-card-content img{
+.about-me-card-content img {
   width: 200px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: grey;
-  display: flex;
-  justify-content: space-around;
 }
 
 // /*  Community Guidelines  */
