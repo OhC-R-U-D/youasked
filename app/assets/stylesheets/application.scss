@@ -45,6 +45,7 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    top: -80px;
     position: relative;
   }
   .landingmedia{
@@ -52,7 +53,14 @@ footer {
     width: 150px;
     position: relative;
     top: -16px;
-    right: -706px;
+    right: -850px;
   }
+  #quote{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+
 
 
