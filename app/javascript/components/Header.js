@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { NavLink } from "react-router-dom";
-import HomeIcon from "@mui/icons-material/Home";
+//import HomeIcon from "@mui/icons-material/Home";
 import { Navbar } from "reactstrap";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -16,7 +16,6 @@ export default class Header extends Component {
       sign_out_route,
     } = this.props;
 
-    
     console.log("logged in:", this.props.logged_in);
     console.log("current user:", this.props.current_user);
     console.log("sign up", this.props.new_user_route);
@@ -27,9 +26,9 @@ export default class Header extends Component {
       <header>
         <Navbar>
           <Stack spacing={2} direction="row">
-            <NavLink to={"/"}>
+            {/* <NavLink to={"/"}>
               <HomeIcon />
-            </NavLink>
+            </NavLink> */}
 
             <NavLink to={"/questionindex"}>
               <Button variant="text">All Questions</Button>

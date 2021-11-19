@@ -13,24 +13,53 @@
  *= require_tree .
  *= require_self
  */
- @import 'bootstrap';
- @import "https://fonts.googleapis.com/icon?family=Material+Icons";
- @import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";
-
-
+@import "bootstrap";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";
 
 // /*  FOOTER  */
 
 footer {
-    font-size: 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color:grey;
-    display: flex;
-    justify-content: space-around;
-  }
+  font-size: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  display: flex;
+  justify-content: space-around;
+}
 
+// /*  Community Guidelines  */
 
+.guide-title {
+  position: fixed;
+  top: 0;
+  bottom: o;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: whitesmoke;
+  background-color: darkcyan;
+  display: grid;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
 
+.guide-body {
+  text-align: left;
+  font-size: medium;
+  background-color: lightcyan;
+}
 
+.guide-article {
+  text-align: center;
+  color: darkslateblue;
+  background-color: lightcyan;
+}
+
+.guide-section {
+  text-align: center;
+  font-style: italic;
+  color: whitesmoke;
+  background-color: darkcyan;
+}
