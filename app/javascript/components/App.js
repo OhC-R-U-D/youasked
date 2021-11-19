@@ -42,7 +42,10 @@ class App extends React.Component {
           <Route path="/guidelines" component={CommunityGuidelinesPage} />
           <Route path="/contact" component={Contact} />
           <Route path="/protectedindex" component={ProtectedIndex} />
-          <Route path="/questionindex" component={QuestionIndex} />
+          <Route 
+            path="/questionindex"
+            render={props => <QuestionIndex questions={this.state.questions} />} 
+          />
           <Route path="/questionnew" component={QuestionNew} />
           <Route path="/questionshow" component={QuestionShow} />
         </Switch>
