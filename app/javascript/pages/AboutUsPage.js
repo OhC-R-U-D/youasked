@@ -46,7 +46,9 @@ export default class AboutUsPage extends Component {
     return (
       <div className="about-us-page">
         <h1>Meet the Team</h1>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <br />
+        <br />
+        <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
           {team.map((person) => {
             return (
               <Grid key={person.id} item xs={6}>
