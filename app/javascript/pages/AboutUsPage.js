@@ -10,8 +10,7 @@ import kevinPic from "../assets/kevin.png";
 import rebeccaPic from "../assets/rebecca.png";
 import shaunPic from "../assets/shaun.png";
 
-
-export default class AboutUsPage extends Component {    
+export default class AboutUsPage extends Component {
   render() {
     const team = [
       {
@@ -70,5 +69,3 @@ export default class AboutUsPage extends Component {
     );
   }
 }
-
-
