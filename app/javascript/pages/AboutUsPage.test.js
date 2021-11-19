@@ -7,11 +7,12 @@ import AboutUsPage from "./AboutUsPage";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("testing about us page", () => {
-  it("should render content", () => {
+  it("should render, has an h1 header, has 4 cards, 4 images, and 4 card bodies ", () => {
     const about = shallow(<AboutUsPage />);
     expect(about.length).toEqual(1);
-    expect(about.find("Grid").length).toEqual(2);
-    expect(about.find("Card").length).toEqual(1);
-    expect(about.find("CardContent").length).toEqual(1);
+    expect(about.find("h1").text()).toEqual("Meet the Team");
+    expect(about.find(".about-me-card").length).toEqual(4);
+    expect(about.find("img").length).toEqual(4);
+    expect(about.find(".about-me-card-content").length).toEqual(4);
   });
 });
