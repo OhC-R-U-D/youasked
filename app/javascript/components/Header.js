@@ -24,7 +24,7 @@ export default class Header extends Component {
 
     return (
       <header>
-        <Navbar>
+        <Navbar expand fixed="top">
           <Stack spacing={2} direction="row">
             <NavLink to={"/"}>
               <HomeIcon />

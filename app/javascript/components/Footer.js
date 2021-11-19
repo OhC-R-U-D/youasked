@@ -9,7 +9,7 @@ export default class Footer extends Component {
   render() {
     return (
       <footer>
-        <Navbar>
+        <Navbar expand fixed="bottom" className="footer-navbar">
           <Stack spacing={2} direction="row">
             <NavLink to={"/about"}>
               <Button varient="text">About Us</Button>

@@ -21,12 +21,44 @@
 
 footer {
   font-size: 20px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: grey;
+  margin: 4rem 0 0 0;
+  background-color: #bdbdbd;
+}
+
+.footer-navbar {
+  div.container-fluid {
+    justify-content: center;
+  }
+}
+
+// Header
+
+header {
+  margin: 0 0 4rem 0;
+}
+
+.navbar {
+  background-color: #bdbdbd;
+}
+
+// About Us Page
+.about-us-page {
+  text-align: center;
+  margin: 0 4rem 0 4rem;
+}
+
+.about-me-card {
+  height: 100%;
+}
+
+.about-me-card-content {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  img {
+  width: 200px;
+  }
 }
 
 // /*  Community Guidelines  */
