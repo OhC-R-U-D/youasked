@@ -50,3 +50,15 @@ header {
 .about-me-card {
   height: 100%;
 }
+
+.about-me-card-content{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.about-me-card-content img{
+  width: 200px;
+}
+

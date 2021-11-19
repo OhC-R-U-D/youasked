@@ -52,14 +52,15 @@ export default class AboutUsPage extends Component {
             return (
               <Grid key={person.id} item xs={6}>
                 <Card className="about-me-card" sx={{ minWidth: 275 }}>
-                  <CardContent>
-                    <Typography variant="h5" component="div">
-                      {person.name}
-                    </Typography>
-                    <img src={person.img} alt="person" />
+                    <CardContent className="about-me-card-content">
+                      <Typography variant="h5" component="div">
+                        {person.name}
+                      </Typography>
+                      <img src={person.img} alt="person" />
 
-                    <Typography variant="body2">{person.blurb}</Typography>
-                  </CardContent>
+                      <Typography variant="body2">{person.blurb}</Typography>
+
+                    </CardContent>
                 </Card>
               </Grid>
             );
