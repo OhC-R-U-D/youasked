@@ -15,9 +15,10 @@ export default class Home extends Component {
                 <div>
                 <img src={landingpage} alt="landingpage" className="landingpage"/>
                 </div>
-                <p id="quote">Sometimes life isn’t black and white and we’re faced with questions,	but let’s keep it light!
+                <div id="quote">
+                <p>Sometimes life isn’t black and white and we’re faced with questions,	but let’s keep it light!
                 Post your questions if you have one now…	but responses may be below the brow.</p>
-
+                </div>
             </div>
 
         )
