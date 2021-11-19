@@ -21,13 +21,14 @@
 
 footer {
   font-size: 20px;
-  margin: 2rem 0 0 0;
-  position: sticky;
-  bottom: 0;
-  width: 100%;
+  margin: 4rem 0 0 0;
   background-color: #bdbdbd;
-  display: flex;
-  justify-content: space-around;
+}
+
+.footer-navbar {
+  div.container-fluid {
+    justify-content: center;
+  }
 }
 
 // Header
@@ -40,13 +41,11 @@ header {
   background-color: #bdbdbd;
 }
 
-
 // About Us Page
-.about-us-page{
+.about-us-page {
   text-align: center;
 }
 
 .about-me-card {
   height: 100%;
-
 }
