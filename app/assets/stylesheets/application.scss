@@ -31,6 +31,28 @@ footer {
     justify-content: space-around;
   }
 
-
+  // /* LANDING PAGE */
+#landing{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(53, 155, 193);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+  .landingpage{
+    height: 270px;
+    width:  200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .landingmedia{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    top: -16px;
+    right: -706px;
+  }
 
 
