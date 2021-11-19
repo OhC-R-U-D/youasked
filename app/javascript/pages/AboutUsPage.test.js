@@ -3,6 +3,7 @@ import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import AboutUsPage from "./AboutUsPage";
 
+
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("testing about us page", () => {

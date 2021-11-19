@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-
 import ashleyPic from "../assets/ashley.png";
 import kevinPic from "../assets/kevin.png";
 import rebeccaPic from "../assets/rebecca.png";
