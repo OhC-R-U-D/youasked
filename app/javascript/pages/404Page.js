@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import patrick from '../assets/patrick.jpg'
 
 export default class Page extends Component {
     render() {
         return (
             <div>
-                This is the 404 page
+             <img src={patrick} alt="patrick" className="patrick"/>
             </div>
         )
     }
