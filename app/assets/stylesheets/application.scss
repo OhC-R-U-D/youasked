@@ -56,6 +56,47 @@ footer {
   color: darkslateblue;
   background-color: lightcyan;
 }
+// /* LANDING PAGE */
+#landing {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(53, 155, 193);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.landingpage {
+  height: 270px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top: -80px;
+  position: relative;
+}
+.landingmedia {
+  height: 150px;
+  width: 150px;
+  position: relative;
+  top: -16px;
+  right: -850px;
+}
+#quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 80px;
+  justify-content: space-around;
+}
+
+// /*  404 PAGE */
+
+.patrick {
+  height: 350px;
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .guide-section {
   text-align: center;
