@@ -31,7 +31,6 @@ class App extends React.Component {
     .catch(errors => console.log("Questions Index Errors:", errors))
   }
   render() {
-    console.log(this.state.questions)
     return (
       <BrowserRouter>
         <Header {...this.props} />
@@ -44,7 +43,8 @@ class App extends React.Component {
           <Route path="/protectedindex" component={ProtectedIndex} />
           <Route 
             path="/questionindex"
-            render={props => <QuestionIndex questions={this.state.questions} />} 
+            render={props => <QuestionIndex user={this.props.current_user} 
+            questions={this.state.questions} />} 
           />
           <Route path="/questionnew" component={QuestionNew} />
           <Route path="/questionshow" component={QuestionShow} />
