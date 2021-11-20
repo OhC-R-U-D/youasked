@@ -47,7 +47,16 @@ class App extends React.Component {
             questions={this.state.questions} />} 
           />
           <Route path="/questionnew" component={QuestionNew} />
-          <Route path="/questionshow" component={QuestionShow} />
+          <Route 
+          path="/questionshow/:id"
+          render={props => {
+              let id = props.match.params.id
+              let question = this.state.questions.find((c) => c.id === +id)
+              console.log(question)
+              return <QuestionShow question={question} />
+              }
+              }
+               />
         </Switch>
         <Footer />
       </BrowserRouter>
