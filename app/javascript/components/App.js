@@ -15,6 +15,21 @@ import QuestionNew from "../pages/QuestionNew";
 import QuestionShow from "../pages/QuestionShow";
 
 class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+      questions:[],
+    }
+  }
+  componentDidMount() {
+    this.questionRead();
+  }
+  questionRead=()=> {
+    fetch("/questions")
+    .then(response => response.json())
+    .then(payload => this.setState({ questions: payload }))
+    .catch(errors => console.log("Questions Index Errors:", errors))
+  }
   render() {
     return (
       <BrowserRouter>
@@ -26,9 +41,22 @@ class App extends React.Component {
           <Route path="/guidelines" component={CommunityGuidelinesPage} />
           <Route path="/contact" component={Contact} />
           <Route path="/protectedindex" component={ProtectedIndex} />
-          <Route path="/questionindex" component={QuestionIndex} />
+          <Route 
+            path="/questionindex"
+            render={props => <QuestionIndex user={this.props.current_user} 
+            questions={this.state.questions} />} 
+          />
           <Route path="/questionnew" component={QuestionNew} />
-          <Route path="/questionshow" component={QuestionShow} />
+          <Route 
+          path="/questionshow/:id"
+          render={props => {
+              let id = props.match.params.id
+              let question = this.state.questions.find((c) => c.id === +id)
+              console.log(question)
+              return <QuestionShow question={question} />
+              }
+              }
+               />
         </Switch>
         <Footer />
       </BrowserRouter>
