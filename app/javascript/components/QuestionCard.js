@@ -11,7 +11,7 @@ export default function MultiActionAreaCard(props) {
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <NavLink
-          to={`/questions/${props.question.id}`}
+          to={`/questionshow/${props.question.id}`}
           style={{ textDecoration: "none", color: "inherit" }}
         >
           {props.question.img_url && (
