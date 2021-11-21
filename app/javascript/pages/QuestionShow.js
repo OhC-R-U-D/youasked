@@ -21,7 +21,7 @@ export default class QuestionShow extends Component {
               image={question.img_url}
             />
           )}
-          <AnswerIndex />
+          <AnswerIndex {...this.props}/>
         </Card>
       </div>
     );

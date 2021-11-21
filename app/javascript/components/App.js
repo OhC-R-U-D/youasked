@@ -17,18 +17,28 @@ class App extends React.Component {
     super(props);
     this.state = {
       questions: [],
+      answers: [],
     };
   }
 
   componentDidMount() {
     this.questionRead();
+    this.answerRead();
   }
+  answerRead = () => {
+    fetch("/answers")
+      .then((response) => response.json())
+      .then((payload) => this.setState({ answers: payload }))
+      .catch((errors) => console.log("Answers Index Errors:", errors));
+    console.log("answers:" + this.state.answers)
+  };
 
   questionRead = () => {
     fetch("/questions")
       .then((response) => response.json())
       .then((payload) => this.setState({ questions: payload }))
       .catch((errors) => console.log("Questions Index Errors:", errors));
+    console.log("questions" + this.state.questions);
   };
 
   createNewQuestion = () => {
@@ -102,13 +112,10 @@ class App extends React.Component {
             render={(props) => {
               let id = props.match.params.id;
               let question = this.state.questions.find((c) => c.id === +id);
-              //to do: need to filter answers based on question id
-              return (
-                <QuestionShow
-                  question={question}
-                  //to do: pass in answers and editAnswers as props
-                />
+              let answers = this.state.answers.filter(
+                (answer) => answer.question_id === +id
               );
+              return <QuestionShow question={question} answers={answers} />;
             }}
           />
         </Switch>
