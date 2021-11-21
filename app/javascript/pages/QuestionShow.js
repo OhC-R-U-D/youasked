@@ -10,7 +10,7 @@ export default class QuestionShow extends Component {
       <div className="question-show-container">
         <Card>
           <CardContent>
-            <Typography sx={{ fontSize: "5vw" }}>{question.post}</Typography>
+            <Typography sx={{ fontSize: "1.5vw" }}>Question: {question.post}</Typography>
           </CardContent>
 
           {question.img_url && (
@@ -21,7 +21,8 @@ export default class QuestionShow extends Component {
               image={question.img_url}
             />
           )}
-          <AnswerIndex {...this.props}/>
+          <Typography sx={{ fontSize: "1.5vw" }}>Comments:</Typography>
+          <AnswerIndex {...this.props} />
         </Card>
       </div>
     );
