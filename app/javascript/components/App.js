@@ -91,7 +91,7 @@ class App extends React.Component {
             path="/questionindex"
             render={() => (
               <QuestionIndex
-                user={this.props.current_user}
+                current_user={this.props.current_user}
                 questions={this.state.questions}
               />
             )}

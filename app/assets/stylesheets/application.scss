@@ -57,7 +57,7 @@ header {
   gap: 20px;
   align-items: center;
   img {
-  width: 200px;
+    width: 200px;
   }
 }
 
@@ -131,4 +131,22 @@ header {
   font-style: italic;
   color: whitesmoke;
   background-color: darkcyan;
+}
+
+// /* QUESTION INDEX PAGE */
+.question-index-container {
+  .MuiCardContent-root {
+    text-align: center;
+  }
+  .MuiPaper-root {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  }
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 0 4rem 0 4rem;
+  justify-content: space-between;
+  align-items: center;
 }
