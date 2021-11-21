@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
+import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import AnswerIndex from "../pages/AnswerIndex";
 
 export default class QuestionShow extends Component {
@@ -10,13 +9,15 @@ export default class QuestionShow extends Component {
     return (
       <div className="question-show-container">
         <Card>
-          <h1>{question.post}</h1>
+          <CardContent>
+            <Typography sx={{ fontSize: "5vw" }}>{question.post}</Typography>
+          </CardContent>
 
           {question.img_url && (
             <CardMedia
               component="img"
               a
-              sx={{ width: "35rem" }}
+              sx={{ width: "50%" }}
               image={question.img_url}
             />
           )}

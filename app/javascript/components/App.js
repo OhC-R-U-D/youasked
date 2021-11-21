@@ -106,7 +106,7 @@ class App extends React.Component {
               return (
                 <QuestionShow
                   question={question}
-                  //to do: pass in answers and editAnswers as props 
+                  //to do: pass in answers and editAnswers as props
                 />
               );
             }}
