@@ -18,6 +18,7 @@ class App extends React.Component {
     this.state = {
       questions: [],
       answers: [],
+
     };
   }
 
@@ -120,6 +121,8 @@ class App extends React.Component {
       .catch((errors) => console.log("Question delete errors:", errors));
   };
 
+  };
+
   render() {
     return (
       <BrowserRouter>
@@ -130,6 +133,7 @@ class App extends React.Component {
           <Route path="/error" component={Page404} />
           <Route path="/guidelines" component={CommunityGuidelinesPage} />
           <Route path="/contact" component={Contact} />
+
           <Route
             path="/protectedindex"
             render={() => {
@@ -158,12 +162,14 @@ class App extends React.Component {
               />
             )}
           />
+
           <Route 
             path="/questionnew" 
             render={()=>(
               <QuestionNew createNewQuestion={this.createNewQuestion}/>
               )}
           />
+
           <Route
             path="/questionshow/:id"
             render={(props) => {
@@ -179,6 +185,7 @@ class App extends React.Component {
                 updateAnswer={this.updateAnswer} 
                 createNewAnswer={this.createNewAnswer}/>
               )
+
             }}
           />
         </Switch>
