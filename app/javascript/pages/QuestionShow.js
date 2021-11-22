@@ -5,7 +5,6 @@ import AnswerIndex from "../pages/AnswerIndex";
 export default class QuestionShow extends Component {
   render() {
     const { question } = this.props;
-    console.log(question);
     return (
       <div className="question-show-container">
         <Card>

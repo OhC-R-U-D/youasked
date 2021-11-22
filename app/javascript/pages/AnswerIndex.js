@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Stack from "@mui/material/Stack";
-import SnackbarContent from "@mui/material/SnackbarContent";
+import Answer from "../components/Answer";
+
 
 export default class AnswerIndex extends Component {
   render() {
@@ -10,9 +10,7 @@ export default class AnswerIndex extends Component {
         <br />
         {this.props.answers.map((answer) => {
           return (
-            <Stack key={answer.id} spacing={2} sx={{ maxWidth: 600 }}>
-              <SnackbarContent message={answer.comment} />
-            </Stack>
+            <Answer answer={answer} />
           );
         })}
       </div>
