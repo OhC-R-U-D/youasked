@@ -4,8 +4,19 @@ RSpec.describe "Answers", type: :request do
   let(:user) do
     User.create alias: 'test', email: 'test@testing.com', password: '123456', password_confirmation: '123456'
   end
+
   let(:question) do
     Question.create post: 'Is this toast burnt?', img_url: 'https://live.staticflickr.com/298/31930376435_7d1dcc40ef_b.jpg', user_id: user.id
+  end
+
+  let(:answer_params) do
+    {
+      answer: {
+        comment: "Time to move on",
+        question_id: question.id,
+        user_id: user.id
+      }
+    }
   end
 
   # -----index-----
@@ -24,13 +35,6 @@ RSpec.describe "Answers", type: :request do
   # -----create-----
   describe "POST /create" do
     it "creates a new answer" do
-      answer_params = {
-        answer: {
-          comment: "Time to move on",
-          question_id: question.id,
-          user_id: user.id
-        }
-      }
 
       post '/answers', params: answer_params
       expect(response).to have_http_status(200)
@@ -43,13 +47,7 @@ RSpec.describe "Answers", type: :request do
   # -----update-----
   describe "PATCH /update" do
     it 'updates a comment' do
-      answer_params = {
-        answer: {
-          comment: "Time to move on",
-          question_id: question.id,
-          user_id: user.id
-        }
-      }
+     
       post '/answers', params: answer_params
       answer = Answer.first
 
@@ -70,13 +68,7 @@ RSpec.describe "Answers", type: :request do
   # -----Destroy-----
   describe "DELETE /destroy" do
     it 'deletes an answer' do
-      answer_params = {
-        answer: {
-          comment: "Time to move on",
-          question_id: question.id,
-          user_id: user.id
-        }
-      }
+     
       post '/answers', params: answer_params
       answer = Answer.first
       
