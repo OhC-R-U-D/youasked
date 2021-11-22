@@ -17,9 +17,11 @@ export default class QuestionNew extends Component {
             submitted: false
         }
     }
-    handleChange = (e) => {
+    handleChange = (name, e) => {
         let { form } = this.state
-        form[e.target.name] = e.target.value
+        form[name] = e.target.value
+        console.log(form)
+        console.log(name)
         this.setState({form: form})
     }
     handleSubmit = () => {
@@ -40,9 +42,10 @@ export default class QuestionNew extends Component {
                         required
                         id="outlined-required"
                         label="Optional"
-                        defaultValue="URL"
-                        type="text"
-                        onChange={this.handleChange}
+                        // defaultValue="URL"
+                        onChange={(e)=>{
+                            console.log(e)
+                            this.handleChange("url", e)}}
                         value={this.state.form.url} 
                         />
                         <br />
@@ -50,8 +53,8 @@ export default class QuestionNew extends Component {
                         required
                         id="outlined-required"
                         label="Required"
-                        defaultValue="SPILL YOUR GUTS HERE"
-                        onChange={this.handleChange}
+                        // defaultValue="SPILL YOUR GUTS HERE"
+                        onChange={(e)=>this.handleChange("question", e)}
                         value={this.state.form.question}
                         />
                          <br />
