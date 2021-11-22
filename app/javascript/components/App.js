@@ -18,7 +18,6 @@ class App extends React.Component {
     this.state = {
       questions: [],
       answers: [],
-
     };
   }
 
@@ -32,44 +31,43 @@ class App extends React.Component {
       .then((response) => response.json())
       .then((payload) => this.setState({ answers: payload }))
       .catch((errors) => console.log("Answers Index Errors:", errors));
-    console.log("answers:" + this.state.answers)
   };
 
   updateAnswer = (editAnswer, id) => {
     fetch(`/answers/${id}`, {
       body: JSON.stringify(editAnswer),
       headers: {
-        "Content-Type" : "application/json"
+        "Content-Type": "application/json",
       },
-      method: "PATCH"
+      method: "PATCH",
     })
-          .then(response => {
-        if(response.status === 422){
-          alert("Something went wrong, please check your submission.")
+      .then((response) => {
+        if (response.status === 422) {
+          alert("Something went wrong, please check your submission.");
         }
         return response.json();
       })
-      .then(payload => this.answerRead())
-      .catch(errors => console.log("Answer Update Errors:", errors))
-  }
+      .then((payload) => this.answerRead())
+      .catch((errors) => console.log("Answer Update Errors:", errors));
+  };
 
   createNewAnswer = (newAnswer) => {
-    fetch("/answers",{
+    fetch("/answers", {
       body: JSON.stringify(newAnswer),
       headers: {
-        "Content-Type" : "application/json"
+        "Content-Type": "application/json",
       },
-      method: "POST"
+      method: "POST",
     })
-      .then(response => {
-        if(response.status === 422){
-          alert("Something went wrong, please check your submission.")
+      .then((response) => {
+        if (response.status === 422) {
+          alert("Something went wrong, please check your submission.");
         }
         return response.json();
       })
-      .then(payload => this.answerRead())
-      .catch(errors => console.log("Answer Create Errors:", errors))
-  }
+      .then((payload) => this.answerRead())
+      .catch((errors) => console.log("Answer Create Errors:", errors));
+  };
 
   deleteAnswer = (id) => {
     fetch(`/answers/${id}`, {
@@ -88,7 +86,6 @@ class App extends React.Component {
       .then((response) => response.json())
       .then((payload) => this.setState({ questions: payload }))
       .catch((errors) => console.log("Questions Index Errors:", errors));
-    console.log("questions" + this.state.questions);
   };
 
   createNewQuestion = (newQuestion) => {
@@ -121,8 +118,6 @@ class App extends React.Component {
       .catch((errors) => console.log("Question delete errors:", errors));
   };
 
-  };
-
   render() {
     return (
       <BrowserRouter>
@@ -153,6 +148,7 @@ class App extends React.Component {
               );
             }}
           />
+
           <Route
             path="/questionindex"
             render={() => (
@@ -163,11 +159,11 @@ class App extends React.Component {
             )}
           />
 
-          <Route 
-            path="/questionnew" 
-            render={()=>(
-              <QuestionNew createNewQuestion={this.createNewQuestion}/>
-              )}
+          <Route
+            path="/questionnew"
+            render={() => (
+              <QuestionNew createNewQuestion={this.createNewQuestion} />
+            )}
           />
 
           <Route
@@ -178,14 +174,14 @@ class App extends React.Component {
               let answers = this.state.answers.filter(
                 (answer) => answer.question_id === +id
               );
-              return  (
-                <QuestionShow 
-                question={question} 
-                answers={answers} 
-                updateAnswer={this.updateAnswer} 
-                createNewAnswer={this.createNewAnswer}/>
-              )
-
+              return (
+                <QuestionShow
+                  question={question}
+                  answers={answers}
+                  updateAnswer={this.updateAnswer}
+                  createNewAnswer={this.createNewAnswer}
+                />
+              );
             }}
           />
         </Switch>
