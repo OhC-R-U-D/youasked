@@ -25,12 +25,61 @@ class App extends React.Component {
     this.questionRead();
     this.answerRead();
   }
+
   answerRead = () => {
     fetch("/answers")
       .then((response) => response.json())
       .then((payload) => this.setState({ answers: payload }))
       .catch((errors) => console.log("Answers Index Errors:", errors));
     console.log("answers:" + this.state.answers)
+  };
+
+  updateAnswer = (editAnswer, id) => {
+    fetch(`/answers/${id}`, {
+      body: JSON.stringify(editAnswer),
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      method: "PATCH"
+    })
+          .then(response => {
+        if(response.status === 422){
+          alert("Something went wrong, please check your submission.")
+        }
+        return response.json();
+      })
+      .then(payload => this.answerRead())
+      .catch(errors => console.log("Answer Update Errors:", errors))
+  }
+
+  createNewAnswer = (newAnswer) => {
+    fetch("/answers",{
+      body: JSON.stringify(newAnswer),
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      method: "POST"
+    })
+      .then(response => {
+        if(response.status === 422){
+          alert("Something went wrong, please check your submission.")
+        }
+        return response.json();
+      })
+      .then(payload => this.answerRead())
+      .catch(errors => console.log("Answer Create Errors:", errors))
+  }
+
+  deleteAnswer = (id) => {
+    fetch(`/answers/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((payload) => this.answerRead())
+      .catch((errors) => console.log("Answer delete errors:", errors));
   };
 
   questionRead = () => {
@@ -41,7 +90,7 @@ class App extends React.Component {
     console.log("questions" + this.state.questions);
   };
 
-  createNewQuestion = () => {
+  createNewQuestion = (newQuestion) => {
     fetch("/questions", {
       body: JSON.stringify(newQuestion),
       headers: {
@@ -87,14 +136,17 @@ class App extends React.Component {
               let myQuestions = this.state.questions.filter(
                 (question) => question.user_id === this.props.current_user.id
               );
-              //to do: need to also filter out current users answers
+              let myAnswers = this.state.answers.filter(
+                (answer) => answer.user_id === this.props.current_user.id
+              );
               return (
                 <ProtectedIndex
                   questions={myQuestions}
+                  answers={myAnswers}
                   deleteQuestion={this.deleteQuestion}
+                  deleteAnswer={this.deleteAnswer}
                 />
               );
-              //to do: need to also pass in answers and deleteAnswer as props
             }}
           />
           <Route
@@ -106,7 +158,12 @@ class App extends React.Component {
               />
             )}
           />
-          <Route path="/questionnew" component={QuestionNew} />
+          <Route 
+            path="/questionnew" 
+            render={()=>(
+              <QuestionNew createNewQuestion={this.createNewQuestion}/>
+              )}
+          />
           <Route
             path="/questionshow/:id"
             render={(props) => {
@@ -115,7 +172,13 @@ class App extends React.Component {
               let answers = this.state.answers.filter(
                 (answer) => answer.question_id === +id
               );
-              return <QuestionShow question={question} answers={answers} />;
+              return  (
+                <QuestionShow 
+                question={question} 
+                answers={answers} 
+                updateAnswer={this.updateAnswer} 
+                createNewAnswer={this.createNewAnswer}/>
+              )
             }}
           />
         </Switch>
