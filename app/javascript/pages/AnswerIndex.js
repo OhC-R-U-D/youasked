@@ -1,12 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import Stack from "@mui/material/Stack";
+import SnackbarContent from "@mui/material/SnackbarContent";
 
 export default class AnswerIndex extends Component {
-    render() {
-        return (
-            <div>
-                This is the Answer Index Component
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <h3>AnswerIndex Rendered</h3>
+        <br />
+        {this.props.answers.map((answer) => {
+          return (
+            <Stack key={answer.id} spacing={2} sx={{ maxWidth: 600 }}>
+              <SnackbarContent message={answer.comment} />
+            </Stack>
+          );
+        })}
+      </div>
+    );
+  }
 }
-

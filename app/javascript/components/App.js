@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -19,17 +17,107 @@ class App extends React.Component {
     super(props);
     this.state = {
       questions: [],
+      answers: [],
     };
   }
+
   componentDidMount() {
     this.questionRead();
+    this.answerRead();
   }
+
+  answerRead = () => {
+    fetch("/answers")
+      .then((response) => response.json())
+      .then((payload) => this.setState({ answers: payload }))
+      .catch((errors) => console.log("Answers Index Errors:", errors));
+  };
+
+  updateAnswer = (editAnswer, id) => {
+    fetch(`/answers/${id}`, {
+      body: JSON.stringify(editAnswer),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
+      .then((response) => {
+        if (response.status === 422) {
+          alert("Something went wrong, please check your submission.");
+        }
+        return response.json();
+      })
+      .then((payload) => this.answerRead())
+      .catch((errors) => console.log("Answer Update Errors:", errors));
+  };
+
+  createNewAnswer = (newAnswer) => {
+    fetch("/answers", {
+      body: JSON.stringify(newAnswer),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => {
+        if (response.status === 422) {
+          alert("Something went wrong, please check your submission.");
+        }
+        return response.json();
+      })
+      .then((payload) => this.answerRead())
+      .catch((errors) => console.log("Answer Create Errors:", errors));
+  };
+
+  deleteAnswer = (id) => {
+    fetch(`/answers/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((payload) => this.answerRead())
+      .catch((errors) => console.log("Answer delete errors:", errors));
+  };
+
   questionRead = () => {
     fetch("/questions")
       .then((response) => response.json())
       .then((payload) => this.setState({ questions: payload }))
       .catch((errors) => console.log("Questions Index Errors:", errors));
   };
+
+  createNewQuestion = (newQuestion) => {
+    fetch("/questions", {
+      body: JSON.stringify(newQuestion),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => {
+        if (response.status === 422) {
+          alert("Something went wrong, please check your submission.");
+        }
+        return response.json();
+      })
+      .then((payload) => this.questionRead())
+      .catch((errors) => console.log("Question create errors:", errors));
+  };
+
+  deleteQuestion = (id) => {
+    fetch(`/questions/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((payload) => this.questionRead())
+      .catch((errors) => console.log("Question delete errors:", errors));
+  };
+
   render() {
     return (
       <BrowserRouter>
@@ -40,24 +128,60 @@ class App extends React.Component {
           <Route path="/error" component={Page404} />
           <Route path="/guidelines" component={CommunityGuidelinesPage} />
           <Route path="/contact" component={Contact} />
-          <Route path="/protectedindex" component={ProtectedIndex} />
+
+          <Route
+            path="/protectedindex"
+            render={() => {
+              let myQuestions = this.state.questions.filter(
+                (question) => question.user_id === this.props.current_user.id
+              );
+              let myAnswers = this.state.answers.filter(
+                (answer) => answer.user_id === this.props.current_user.id
+              );
+              return (
+                <ProtectedIndex
+                  questions={myQuestions}
+                  answers={myAnswers}
+                  deleteQuestion={this.deleteQuestion}
+                  deleteAnswer={this.deleteAnswer}
+                />
+              );
+            }}
+          />
+
           <Route
             path="/questionindex"
-            render={(props) => (
+            render={() => (
               <QuestionIndex
-                user={this.props.current_user}
+                current_user={this.props.current_user}
                 questions={this.state.questions}
               />
             )}
           />
-          <Route path="/questionnew" component={QuestionNew} />
+
+          <Route
+            path="/questionnew"
+            render={() => (
+              <QuestionNew createNewQuestion={this.createNewQuestion} />
+            )}
+          />
+
           <Route
             path="/questionshow/:id"
             render={(props) => {
               let id = props.match.params.id;
               let question = this.state.questions.find((c) => c.id === +id);
-              console.log(question);
-              return <QuestionShow question={question} />;
+              let answers = this.state.answers.filter(
+                (answer) => answer.question_id === +id
+              );
+              return (
+                <QuestionShow
+                  question={question}
+                  answers={answers}
+                  updateAnswer={this.updateAnswer}
+                  createNewAnswer={this.createNewAnswer}
+                />
+              );
             }}
           />
         </Switch>
