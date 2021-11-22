@@ -41,6 +41,7 @@ export default class QuestionNew extends Component {
                         id="outlined-required"
                         label="Optional"
                         defaultValue="URL"
+                        type="text"
                         onChange={this.handleChange}
                         value={this.state.form.url} 
                         />
@@ -57,7 +58,7 @@ export default class QuestionNew extends Component {
                         <Button 
                         size="medium" 
                         onClick={this.handleSubmit}>Submit</Button>
-                        {this.state.submitted && <Redirect to="/protectedindex" />}
+                        {this.state.submitted && <Redirect to="/questionindex" />}
                    </div> 
             </Box>
 
