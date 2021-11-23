@@ -34,7 +34,11 @@ export default class Header extends Component {
               <Button variant="text">All Questions</Button>
             </NavLink>
 
-            {logged_in && <Button variant="text">My Questions</Button>}
+            {logged_in &&
+            <NavLink to={"/protectedindex"}> 
+            <Button variant="text">My Questions</Button>
+            </NavLink>
+            }
           </Stack>
 
           <Stack spacing={2} direction="row">
