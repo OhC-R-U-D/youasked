@@ -23,6 +23,6 @@ class QuestionsController < ApplicationController
     private
     
     def question_params
-        params.require(:question).permit(:post, :img_url, :user_id, :question_id)
+        params.require(:question).permit(:post, :img_url, :user_id)
     end
 end

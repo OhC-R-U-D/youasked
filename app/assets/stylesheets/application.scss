@@ -57,7 +57,7 @@ header {
   gap: 20px;
   align-items: center;
   img {
-  width: 200px;
+    width: 200px;
   }
 }
 
@@ -133,6 +133,52 @@ header {
   background-color: darkcyan;
 }
 
+
+// * Questions New Form */
+
+#form {
+  text-align: center;
+  width: 500px;
+  height: 600px;
+  border: 15px solid rgb(25, 179, 196);
+  padding: 50px;
+  margin: 0 auto;
+}
+
+// /* QUESTION INDEX PAGE */
+.question-index-container {
+  .MuiCardContent-root {
+    text-align: center;
+  }
+  .MuiPaper-root {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  }
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 0 4rem 0 4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// /* QUESTION SHOW PAGE */
+.question-show-container {
+  .MuiPaper-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  }
+
+  margin: 0 25% 0 25%;
+}
+
 // / * LOGIN/LOG OUT PAGES */
 
 #container{
@@ -154,6 +200,5 @@ text-align: center;
 
 .actions{
   text-align: center;
+
 }
-
-

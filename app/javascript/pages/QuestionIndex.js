@@ -1,23 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import QuestionCard from "../components/QuestionCard";
+import { NavLink, } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 export default class QuestionIndex extends Component {
-    render() {
-        console.log("current user:", this.props.user)
-        return (
-            <div>
-                This is the Question Index Page
-                {this.props.questions &&
-                this.props.questions.map(question => {
-                    return(
-                        <div key={question.id}>
-                            <p>{this.props.user.alias}</p>
-                            <p>{question.post}</p>
-                            <img src={question.img_url}/>
-                        </div>
-                )})}
-
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="question-index-container">
+        {this.props.questions &&
+          this.props.questions.map((question) => {
+            return <QuestionCard key={question.id} question={question} />;
+          })}
+          <NavLink to={"/questionnew"}>
+              <Button variant="text">ADD QUESTION</Button>
+            </NavLink>
+      </div>
+    );
+  }
 }
-
