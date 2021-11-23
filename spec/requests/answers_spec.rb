@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Answers", type: :request do
   let(:user) do
-    User.create alias: 'test', email: 'test@testing.com', password: '123456', password_confirmation: '123456'
+    User.create alias: 'testing_alias', email: 'test@testing.com', password: '123456', password_confirmation: '123456'
   end
 
   let(:question) do
