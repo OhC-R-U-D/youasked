@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+    def set_current_user
+        User.current = current_user
+      end
     def index 
         questions = Question.all 
         render json: questions
@@ -20,6 +23,6 @@ class QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:post, :img_url, :user_id, :question_id)
+        params.require(:question).permit(:post, :img_url, :user_id)
     end
 end

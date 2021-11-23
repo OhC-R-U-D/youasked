@@ -12,9 +12,9 @@ export default class QuestionNew extends Component {
         super(props);
         this.state = {
             form: {
-             question: "",
-             url: "",
-             user_id: this.props.current_user
+             post: "",
+             img_url: "",
+             user_id: this.props.current_user.id
             },
             submitted: false
         }
@@ -22,8 +22,6 @@ export default class QuestionNew extends Component {
     handleChange = (name, e) => {
         let { form } = this.state
         form[name] = e.target.value
-        console.log(form)
-        console.log(name)
         this.setState({form: form})
     }
     handleSubmit = () => {
@@ -45,15 +43,15 @@ export default class QuestionNew extends Component {
                         label="URL"
                         onChange={(e)=>{
                             console.log(e)
-                            this.handleChange("url", e)}}
-                        value={this.state.form.url} 
+                            this.handleChange("img_url", e)}}
+                        value={this.state.form.img_url} 
                         />
                         <br />
                     <TextField fullWidth sx={{ m: 1 }}
                         id="question-box"
                         label="SPILL YOUR GUTS HERE"
-                        onChange={(e)=>this.handleChange("question", e)}
-                        value={this.state.form.question}
+                        onChange={(e)=>this.handleChange("post", e)}
+                        value={this.state.form.post}
                         />
                          <br />
                         <Button 

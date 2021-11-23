@@ -88,23 +88,26 @@ class App extends React.Component {
       .catch((errors) => console.log("Questions Index Errors:", errors));
   };
 
-  createNewQuestion = (newQuestion) => {
-    fetch("/question", {
-      body: JSON.stringify(newQuestion),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
+createNewQuestion = (newQuestion) => {
+  fetch("/questions", {
+    body: JSON.stringify(newQuestion),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+  })
+    .then((response) => {
+      if (response.status === 422) {
+        alert("You call that a question?! TRY AGAIN!");
+      }
+      console.log("look at me", response);
+      return response.json();
     })
-      .then((response) => {
-        if (response.status === 422) {
-          alert("You call that a question?! TRY AGAIN!");
-        }
-        return response.json();
-      })
-      .then((payload) => this.questionRead())
-      .catch((errors) => console.log("Question create errors:", errors));
-  };
+    .then((payload) => this.questionRead())
+    .catch((errors) => console.log("Question create errors:", errors));
+    
+};
+
 
   deleteQuestion = (id) => {
     fetch(`/questions/${id}`, {
