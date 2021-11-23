@@ -15,7 +15,6 @@ export default class QuestionShow extends Component {
           {question.img_url && (
             <CardMedia
               component="img"
-              a
               sx={{ width: "50%" }}
               image={question.img_url}
             />
