@@ -13,7 +13,8 @@ export default class QuestionNew extends Component {
         this.state = {
             form: {
              question: "",
-             url: ""   
+             url: "",
+             user_id: this.props.current_user
             },
             submitted: false
         }
@@ -40,10 +41,8 @@ export default class QuestionNew extends Component {
                <br />
                <br />
                <TextField 
-                        required
                         id="outlined-required"
-                        label="Optional"
-                        // defaultValue="URL"
+                        label="URL"
                         onChange={(e)=>{
                             console.log(e)
                             this.handleChange("url", e)}}
@@ -51,10 +50,8 @@ export default class QuestionNew extends Component {
                         />
                         <br />
                     <TextField fullWidth sx={{ m: 1 }}
-                        required
-                        id="outlined-required"
-                        label="Required"
-                        // defaultValue="SPILL YOUR GUTS HERE"
+                        id="question-box"
+                        label="SPILL YOUR GUTS HERE"
                         onChange={(e)=>this.handleChange("question", e)}
                         value={this.state.form.question}
                         />

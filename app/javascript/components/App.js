@@ -89,7 +89,7 @@ class App extends React.Component {
   };
 
   createNewQuestion = (newQuestion) => {
-    fetch("/questions", {
+    fetch("/question", {
       body: JSON.stringify(newQuestion),
       headers: {
         "Content-Type": "application/json",
@@ -98,7 +98,7 @@ class App extends React.Component {
     })
       .then((response) => {
         if (response.status === 422) {
-          alert("Something went wrong, please check your submission.");
+          alert("You call that a question?! TRY AGAIN!");
         }
         return response.json();
       })
@@ -161,10 +161,10 @@ class App extends React.Component {
 
           <Route
             path="/questionnew"
-            render={() => (
-              <QuestionNew createNewQuestion={this.createNewQuestion} />
-            )}
-          />
+            render={(props) => {
+              return <QuestionNew createNewQuestion={this.createNewQuestion} 
+              current_user={this.props.current_user} />
+            }}/>
 
           <Route
             path="/questionshow/:id"
