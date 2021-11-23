@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import QuestionCard from "../components/QuestionCard";
+import ProtectedQuestionCard from "../components/ProtectedQuestionCard";
 import Stack from "@mui/material/Stack";
 import SnackbarContent from "@mui/material/SnackbarContent";
 import Button from "@mui/material/Button";
@@ -19,7 +19,7 @@ export default class ProtectedIndex extends Component {
           <div id="profileCol">
             <h1>My Profile</h1>
             <NavLink to={"/questionnew"}>
-              <Button variant="text">Ask?</Button>
+              <Button variant="outline">Ask!</Button>
             </NavLink>
           </div>
           <div id="QACol">
@@ -27,10 +27,7 @@ export default class ProtectedIndex extends Component {
             {this.props.questions &&
               this.props.questions.map((question) => {
                 return (
-                  <>
-                    <QuestionCard key={question.id} question={question} />
-                    <Button variant="outlined">Delete</Button>
-                  </>
+                    <ProtectedQuestionCard key={question.id} question={question} />
                 );
               })}
           </div>
