@@ -10,7 +10,7 @@ export default class AnswerIndex extends Component {
         <br />
         {this.props.answers.map((answer) => {
           return (
-            <Answer key={answer.id} answer={answer} updateAnswer={this.props.updateAnswer} question={this.props.question}/>
+            <Answer key={answer.id} answer={answer} current_user={this.props.current_user} updateAnswer={this.props.updateAnswer} question={this.props.question}/>
           );
         })}
       </div>

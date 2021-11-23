@@ -180,6 +180,7 @@ class App extends React.Component {
                   answers={answers}
                   updateAnswer={this.updateAnswer}
                   createNewAnswer={this.createNewAnswer}
+                  current_user={this.props.current_user}
                 />
               );
             }}
