@@ -33,10 +33,10 @@ users.each do |attributes|
     puts "creating user #{attributes}"
 end
 
-user1=User.first
-user2=User.second
-user3=User.third
-user4=User.fourth
+user1=User.find_by alias: 'clueless'
+user2=User.find_by alias: 'tswizzle07'
+user3=User.find_by alias: 'concerneddad'
+user4=User.find_by alias: 'beetfarmer'
 
 user1questions = [
     {
@@ -71,10 +71,10 @@ user2questions.each do |attributes|
     puts "creating questions for user 2 #{attributes}"
 end
 
-q1=Question.first
-q2=Question.second
-q3=Question.third
-q4=Question.fourth
+q1=Question.find_by post: 'Is this toast burnt?'
+q2=Question.find_by post: 'My coworker hates garlic and shys away from bright light....are they are vampire?'
+q3=Question.find_by post: 'Should I tip my nail artist?'
+q4=Question.find_by post: 'My little brother likes triceratops. Do you think they would like this poster?'
 
 q1answers = [
     {

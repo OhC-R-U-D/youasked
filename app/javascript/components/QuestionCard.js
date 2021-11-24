@@ -27,6 +27,9 @@ export default function MultiActionAreaCard(props) {
             <Typography gutterBottom variant="h5" component="div">
               {props.question.post}
             </Typography>
+            <Typography gutterBottom variant="body1" component="div">
+              {props.question.user.alias}
+            </Typography>
           </CardContent>
         </NavLink>
       </CardActionArea>

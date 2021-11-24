@@ -46,7 +46,7 @@ export default class Answer extends Component {
     return (
       <Stack key={this.props.answer.id} spacing={2} sx={{ maxWidth: 600 }}>
         <SnackbarContent message={this.props.answer.comment} />
-
+        <div>{this.props.answer.user.alias}</div>
         {this.state.isEditable && ( //user matches current user
           <button onClick={this.toggleEdit}>
             {" "}
