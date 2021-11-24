@@ -9,7 +9,9 @@ export default class QuestionShow extends Component {
       <div className="question-show-container">
         <Card>
           <CardContent>
-            <Typography sx={{ fontSize: "1.5vw" }}>Question: {question.post}</Typography>
+            <Typography sx={{ fontSize: "1.5vw" }}>
+              Question: {question.post}
+            </Typography>
           </CardContent>
 
           {question.img_url && (

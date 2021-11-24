@@ -7,13 +7,17 @@ export default class Answer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEditable: this.props.current_user ? this.props.answer.user_id === this.props.current_user.id : "",
+      isEditable: this.props.current_user
+        ? this.props.answer.user_id === this.props.current_user.id
+        : "",
       form: {
         comment: this.props.answer ? this.props.answer.comment : "",
         question_id: this.props.answer
           ? this.props.answer.question_id
           : this.props.question.id,
-        user_id: this.props.answer ? this.props.answer.user_id : this.props.current_user.id,
+        user_id: this.props.answer
+          ? this.props.answer.user_id
+          : this.props.current_user.id,
       },
       submitted: false,
       isEditing: false,
@@ -26,7 +30,7 @@ export default class Answer extends Component {
       { comment: this.state.form.comment },
       this.props.answer.id
     );
-    this.toggleEdit()
+    this.toggleEdit();
   };
   handleChange = (e) => {
     let { form } = this.state;
@@ -36,7 +40,7 @@ export default class Answer extends Component {
 
   toggleEdit = () => {
     this.setState({ isEditing: !this.state.isEditing });
-  }
+  };
 
   render() {
     return (
@@ -60,5 +64,3 @@ export default class Answer extends Component {
     );
   }
 }
-
-          
