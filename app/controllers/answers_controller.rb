@@ -7,7 +7,11 @@ class AnswersController < ApplicationController
 
     def create
         answer = Answer.create(answer_params)
-        render json: answer
+        if answer.valid?
+            render json: answer
+        else
+            render json: answer.errors, status: 422
+        end
     end
 
     def update

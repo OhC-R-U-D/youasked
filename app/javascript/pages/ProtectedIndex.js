@@ -5,12 +5,6 @@ import SnackbarContent from "@mui/material/SnackbarContent";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 
-//REMINDER: WE HAVE THESE PROPS:
-// questions={myQuestions}
-// answers={myAnswers}
-// deleteQuestion={this.deleteQuestion}
-// deleteAnswer={this.deleteAnswer}
-
 export default class ProtectedIndex extends Component {
   render() {
     return (

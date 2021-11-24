@@ -134,6 +134,17 @@ header {
 }
 
 
+// * Questions New Form */
+
+#form {
+  text-align: center;
+  width: 500px;
+  height: 600px;
+  border: 15px solid rgb(25, 179, 196);
+  padding: 50px;
+  margin: 0 auto;
+}
+
 // /* QUESTION INDEX PAGE */
 .question-index-container {
   .MuiCardContent-root {
@@ -189,6 +200,7 @@ text-align: center;
 
 .actions{
   text-align: center;
+
 }
 
 // /* Protected Index PAGE */

@@ -19,7 +19,6 @@ export default function MultiActionAreaCard(props) {
           {props.question.img_url && (
             <CardMedia
               component="img"
-              a
               height="250"
               image={props.question.img_url}
             />
