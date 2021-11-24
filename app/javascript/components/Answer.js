@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Stack from "@mui/material/Stack";
 import SnackbarContent from "@mui/material/SnackbarContent";
+import EditIcon from "@mui/icons-material/Edit";
 
 export default class Answer extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ export default class Answer extends Component {
         user_id: this.props.answer ? this.props.answer.user_id : "",
       },
       submitted: false,
+      isEditing: false,
     };
   }
   handleSubmit = (e) => {
@@ -30,9 +32,23 @@ export default class Answer extends Component {
     form.comment = e.target.value;
     this.setState({ form: form });
   };
+
+  toggleEdit() {
+    this.setState({ isEditing: !this.state.isEditing });
+  }
   // set up icon to toggle the form
 
   render() {
+    if (this.state.isEditing) {
+      return (
+        <div>
+          <button onClick={this.toggleEdit}>
+            {" "}
+            <EditIcon />{" "}
+          </button>
+        </div>
+      );
+    }
     return (
       <Stack key={this.props.answer.id} spacing={2} sx={{ maxWidth: 600 }}>
         <SnackbarContent message={this.props.answer.comment} />
