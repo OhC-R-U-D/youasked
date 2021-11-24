@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ProtectedQuestionCard from "../components/ProtectedQuestionCard";
-import Stack from "@mui/material/Stack";
-import SnackbarContent from "@mui/material/SnackbarContent";
+import ProtectedAnswerCard from "../components/ProtectedAnswerCard";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 
@@ -21,7 +20,11 @@ export default class ProtectedIndex extends Component {
             {this.props.questions &&
               this.props.questions.map((question) => {
                 return (
-                    <ProtectedQuestionCard key={question.id} deleteQuestion={this.props.deleteQuestion} question={question} />
+                  <ProtectedQuestionCard
+                    key={question.id}
+                    deleteQuestion={this.props.deleteQuestion}
+                    question={question}
+                  />
                 );
               })}
           </div>
@@ -29,9 +32,11 @@ export default class ProtectedIndex extends Component {
             <h1>My Answers</h1>
             {this.props.answers.map((answer) => {
               return (
-                <Stack key={answer.id} spacing={2} sx={{ maxWidth: 600 }}>
-                  <SnackbarContent message={answer.comment} />
-                </Stack>
+                <ProtectedAnswerCard
+                  key={answer.id}
+                  deleteAnswer={this.props.deleteAnswer}
+                  answer={answer}
+                />
               );
             })}
           </div>
