@@ -27,7 +27,7 @@ export default class ProtectedIndex extends Component {
             {this.props.questions &&
               this.props.questions.map((question) => {
                 return (
-                    <ProtectedQuestionCard key={question.id} question={question} />
+                    <ProtectedQuestionCard key={question.id} deleteQuestion={this.props.deleteQuestion} question={question} />
                 );
               })}
           </div>
