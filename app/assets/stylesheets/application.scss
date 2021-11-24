@@ -133,7 +133,6 @@ header {
   background-color: darkcyan;
 }
 
-
 // * Questions New Form */
 
 #form {
@@ -181,24 +180,22 @@ header {
 
 // / * LOGIN/LOG OUT PAGES */
 
-#container{
+#container {
   background-color: #bdbdbd;
   width: 300px;
   border: 15px solid rgb(25, 179, 196);
   padding: 50px;
   margin: 0 auto;
-
 }
 
-#login-header{
-text-align: center;
-}
-
-.field{
-text-align: center;
-}
-
-.actions{
+#login-header {
   text-align: center;
+}
 
+.field {
+  text-align: center;
+}
+
+.actions {
+  text-align: center;
 }
