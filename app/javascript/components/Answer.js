@@ -7,13 +7,13 @@ export default class Answer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEditable: this.props.answer.id === this.props.current_user.id,
+      isEditable: this.props.answer.user_id === this.props.current_user.id,
       form: {
         comment: this.props.answer ? this.props.answer.comment : "",
         question_id: this.props.answer
           ? this.props.answer.question_id
           : this.props.question.id,
-        user_id: this.props.answer ? this.props.answer.user_id : "",
+        user_id: this.props.answer ? this.props.answer.user_id : this.props.current_user.id,
       },
       submitted: false,
       isEditing: false,
@@ -26,6 +26,7 @@ export default class Answer extends Component {
       { comment: this.state.form.comment },
       this.props.answer.id
     );
+    this.toggleEdit()
   };
   handleChange = (e) => {
     let { form } = this.state;
@@ -33,27 +34,23 @@ export default class Answer extends Component {
     this.setState({ form: form });
   };
 
-  toggleEdit() {
+  toggleEdit = () => {
     this.setState({ isEditing: !this.state.isEditing });
   }
-  // set up icon to toggle the form
 
   render() {
-    if (this.state.isEditing) {
-      return (
-        <div>
-          <button onClick={this.toggleEdit}>
-            {" "}
-            <EditIcon />{" "}
-          </button>
-        </div>
-      );
-    }
     return (
       <Stack key={this.props.answer.id} spacing={2} sx={{ maxWidth: 600 }}>
         <SnackbarContent message={this.props.answer.comment} />
 
-        {this.state.isEditable && (
+        {this.state.isEditable && ( //user matches current user
+          <button onClick={this.toggleEdit}>
+            {" "}
+            <EditIcon />{" "}
+          </button>
+        )}
+
+        {this.state.isEditing && (
           <form onSubmit={this.handleSubmit}>
             <input onChange={this.handleChange} htmlFor="comment"></input>
             <button type="submit">Submit</button>
@@ -63,3 +60,5 @@ export default class Answer extends Component {
     );
   }
 }
+
+          
