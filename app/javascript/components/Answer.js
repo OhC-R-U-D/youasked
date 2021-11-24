@@ -7,7 +7,7 @@ export default class Answer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEditable: this.props.answer.user_id === this.props.current_user.id,
+      isEditable: this.props.current_user ? this.props.answer.user_id === this.props.current_user.id : "",
       form: {
         comment: this.props.answer ? this.props.answer.comment : "",
         question_id: this.props.answer
