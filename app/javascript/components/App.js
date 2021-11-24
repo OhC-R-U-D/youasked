@@ -183,6 +183,7 @@ createNewQuestion = (newQuestion) => {
                   answers={answers}
                   updateAnswer={this.updateAnswer}
                   createNewAnswer={this.createNewAnswer}
+                  current_user={this.props.current_user}
                 />
               );
             }}

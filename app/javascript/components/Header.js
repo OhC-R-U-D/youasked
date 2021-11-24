@@ -16,12 +16,6 @@ export default class Header extends Component {
       sign_out_route,
     } = this.props;
 
-    // console.log("logged in:", this.props.logged_in);
-    // console.log("current user:", this.props.current_user);
-    // console.log("sign up", this.props.new_user_route);
-    // console.log("sign in:", this.props.sign_in_route);
-    // console.log("sign out:", this.props.sign_out_route);
-
     return (
       <header>
         <Navbar expand fixed="top">
@@ -34,7 +28,11 @@ export default class Header extends Component {
               <Button variant="text">All Questions</Button>
             </NavLink>
 
-            {logged_in && <Button variant="text">My Questions</Button>}
+            {logged_in && (
+              <NavLink to={"/protectedindex"}>
+                <Button variant="text">My Questions</Button>
+              </NavLink>
+            )}
           </Stack>
 
           <Stack spacing={2} direction="row">
