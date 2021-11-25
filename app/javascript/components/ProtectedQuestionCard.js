@@ -25,21 +25,21 @@ export default function MultiActionAreaCard(props) {
         />
       )}
       <div className="navlinks">
-      <NavLink
-        to={`/questionshow/${props.question.id}`}
-        style={{ textDecoration: "none", color: "inherit" }}
-      >
-        {UnstyledButtonCustom("See Answers")}
-      </NavLink>
-      <a
-        style={{ textDecoration: "none", color: "inherit" }}
-        onClick={() => {
-          confirm("Are you sure you want to delete this question?") &&
-            props.deleteQuestion(props.question.id);
-        }}
-      >
-        {UnstyledButtonCustom("Delete Question")}
-      </a>
+        <NavLink
+          to={`/questionshow/${props.question.id}`}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          {UnstyledButtonCustom("See Answers")}
+        </NavLink>
+        <a
+          style={{ textDecoration: "none", color: "inherit" }}
+          onClick={() => {
+            confirm("Are you sure you want to delete this question?") &&
+              props.deleteQuestion(props.question.id);
+          }}
+        >
+          {UnstyledButtonCustom("Delete Question")}
+        </a>
       </div>
     </Card>
   );
