@@ -30,7 +30,7 @@ export default class Header extends Component {
 
             {logged_in && (
               <NavLink to={"/protectedindex"}>
-                <Button variant="text">My Questions</Button>
+                <Button variant="text">My Profile</Button>
               </NavLink>
             )}
           </Stack>
