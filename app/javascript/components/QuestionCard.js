@@ -30,6 +30,7 @@ export default function MultiActionAreaCard(props) {
             <Typography gutterBottom variant="body1" component="div">
               {props.question.user.alias}
             </Typography>
+
           </CardContent>
         </NavLink>
       </CardActionArea>
