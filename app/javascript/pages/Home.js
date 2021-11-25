@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import landingpage from '../assets/landingpage.jpg'
-import landingmedia from '../assets/landingmedia.gif'
+import landingmedia from '../assets/landingpage.gif'
+import Box from '@mui/material/Box';
+
 
 export default class Home extends Component {
     render() {
@@ -15,11 +17,17 @@ export default class Home extends Component {
                 <div>
                 <img src={landingpage} alt="landingpage" className="landingpage"/>
                 </div>
-                <div id="quote">
-                <p>Sometimes life isn’t black and white and we’re faced with questions,	but let’s keep it light!
-                Post your questions if you have one now…	but responses may be below the brow.</p>
+                <div>
+                <Box class="landing-quote" sx={{ display: 'flex', justifyContent: 'center', borderRadius: 16 }}>
+                <p>Sometimes life isn’t black and white 
+                    and we’re faced with questions,	
+                    but let’s keep it light!
+                Post your questions if you have one now…	
+                but responses may be below the brow.</p>
+                </Box>
                 </div>
-            </div>
+                </div>
+            
 
         )
     }

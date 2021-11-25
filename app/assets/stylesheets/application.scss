@@ -16,7 +16,18 @@
 @import "bootstrap";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap";
 
+
+
+// /* THE APP */ 
+*{
+  font-family: 'Ubuntu';
+}
+body{
+  background: #504e4e;
+  
+}
 // /*  FOOTER  */
 
 footer {
@@ -108,12 +119,11 @@ header {
   top: -16px;
   right: -850px;
 }
-#quote {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 80px;
-  justify-content: space-around;
+.landing-quote{
+  text-align: center;
+  font-style: italic;
+  color: whitesmoke;
+  border-radius: 1;
 }
 
 // /*  404 PAGE */
