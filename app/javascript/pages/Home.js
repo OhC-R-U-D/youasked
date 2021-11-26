@@ -7,13 +7,22 @@ import logo from '../assets/logo.png'
 
 export default class Home extends Component {
     render() {
+        const {
+            logged_in,
+            current_user,
+            new_user_route,
+            sign_in_route,
+            sign_out_route,
+          } = this.props;
         return (
             <div class="landing-container">
                 {/* <div>
                     <h1 id="landing">YOU ASKED..</h1>
                 </div> */}
                 <div>
+                {!logged_in && (
                     <img src={landingmedia} alt="landingmedia" className="landingmedia"/>
+                )}
                 </div>
                 <div>
                     <img src={logo}  
