@@ -18,13 +18,22 @@ class App extends React.Component {
     this.state = {
       questions: [],
       answers: [],
+      users: [],
     };
   }
 
   componentDidMount() {
     this.questionRead();
     this.answerRead();
+    this.userRead();
   }
+
+  userRead = () => {
+    fetch("/answers")
+      .then((response) => response.json())
+      .then((payload) => this.setState({ users: payload }))
+      .catch((errors) => console.log("Users Index Errors:", errors));
+  };
 
   answerRead = () => {
     fetch("/answers")
@@ -88,26 +97,24 @@ class App extends React.Component {
       .catch((errors) => console.log("Questions Index Errors:", errors));
   };
 
-createNewQuestion = (newQuestion) => {
-  fetch("/questions", {
-    body: JSON.stringify(newQuestion),
-    headers: {
-      "Content-Type": "application/json",
-    },
-    method: "POST",
-  })
-    .then((response) => {
-      if (response.status === 422) {
-        alert("You call that a question?! TRY AGAIN!");
-      }
-      console.log("look at me", response);
-      return response.json();
+  createNewQuestion = (newQuestion) => {
+    fetch("/questions", {
+      body: JSON.stringify(newQuestion),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
     })
-    .then((payload) => this.questionRead())
-    .catch((errors) => console.log("Question create errors:", errors));
-    
-};
-
+      .then((response) => {
+        if (response.status === 422) {
+          alert("You call that a question?! TRY AGAIN!");
+        }
+        console.log("look at me", response);
+        return response.json();
+      })
+      .then((payload) => this.questionRead())
+      .catch((errors) => console.log("Question create errors:", errors));
+  };
 
   deleteQuestion = (id) => {
     fetch(`/questions/${id}`, {
@@ -165,9 +172,14 @@ createNewQuestion = (newQuestion) => {
           <Route
             path="/questionnew"
             render={(props) => {
-              return <QuestionNew createNewQuestion={this.createNewQuestion} 
-              current_user={this.props.current_user} />
-            }}/>
+              return (
+                <QuestionNew
+                  createNewQuestion={this.createNewQuestion}
+                  current_user={this.props.current_user}
+                />
+              );
+            }}
+          />
 
           <Route
             path="/questionshow/:id"
@@ -183,7 +195,6 @@ createNewQuestion = (newQuestion) => {
                   answers={answers}
                   updateAnswer={this.updateAnswer}
                   createNewAnswer={this.createNewAnswer}
-                  current_user={this.props.current_user}
                 />
               );
             }}

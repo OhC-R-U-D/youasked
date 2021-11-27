@@ -73,17 +73,6 @@ RSpec.describe "Questions", type: :request do
       expect(json['post']).to include "can't be blank"
     end
   
-    it 'does not create a question without an image link' do
-      question_params = {
-        question: {
-          post: 'Is this toast burnt?'
-        }
-      }
-      post '/questions', params: question_params
-      expect(response).to have_http_status(422)
-      question = JSON.parse(response.body)
-      expect(question['img_url']).to include "can't be blank"
-    end
     it 'cannot create a question without a post that is at least 10 characters' do
       question_params = {
         question: {
@@ -97,6 +86,5 @@ RSpec.describe "Questions", type: :request do
       expect(json['post']).to include "is too short (minimum is 10 characters)"
     end        
   end
+
 end
-
-

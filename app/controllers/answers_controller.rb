@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
 
     def index
         answers = Answer.all
-        render json: answers
+        render json: answers, include: ['user']
     end
 
     def create
