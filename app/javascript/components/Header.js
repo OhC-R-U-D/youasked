@@ -5,6 +5,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { Navbar } from "reactstrap";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import UnstyledButtonCustom from "./UnstyledButtonCustom";
 
 export default class Header extends Component {
   render() {
@@ -23,14 +24,16 @@ export default class Header extends Component {
             <NavLink to={"/"}>
               <HomeIcon />
             </NavLink>
-
-            <NavLink to={"/questionindex"}>
-              <Button variant="text">All Questions</Button>
+            <NavLink
+              to={"/questionindex"}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {UnstyledButtonCustom("All Questions")}
             </NavLink>
 
             {logged_in && (
               <NavLink to={"/protectedindex"}>
-                <Button variant="text">My Questions</Button>
+                {UnstyledButtonCustom("My Profile")}
               </NavLink>
             )}
           </Stack>
@@ -40,21 +43,21 @@ export default class Header extends Component {
               <div>
                 {`Hello ${current_user.alias}!  `}
                 <a href={sign_out_route}>
-                  <Button variant="text">Sign Out</Button>
+                {UnstyledButtonCustom("Sign Out")}
                 </a>
               </div>
             )}
             {!logged_in && (
               <div>
                 <a href={sign_in_route}>
-                  <Button variant="text">Sign In</Button>
+                {UnstyledButtonCustom("Sign In")}
                 </a>
               </div>
             )}
             {!logged_in && (
               <div>
                 <a href={new_user_route}>
-                  <Button variant="text">Sign Up</Button>
+                {UnstyledButtonCustom("Sign Up")}
                 </a>
               </div>
             )}

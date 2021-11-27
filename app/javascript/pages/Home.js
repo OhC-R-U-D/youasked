@@ -16,9 +16,6 @@ export default class Home extends Component {
           } = this.props;
         return (
             <div class="landing-container">
-                {/* <div>
-                    <h1 id="landing">YOU ASKED..</h1>
-                </div> */}
                 <div>
                 {!logged_in && (
                     <img src={landingmedia} alt="landingmedia" className="landingmedia"/>
@@ -45,4 +42,3 @@ export default class Home extends Component {
         )
     }
 }
-

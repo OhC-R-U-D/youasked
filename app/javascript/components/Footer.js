@@ -4,6 +4,7 @@ import { NavItem, Nav } from "reactstrap";
 import { Navbar } from "reactstrap";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import UnstyledButtonCustom from "./UnstyledButtonCustom";
 
 export default class Footer extends Component {
   render() {
@@ -12,13 +13,13 @@ export default class Footer extends Component {
         <Navbar expand fixed="bottom" className="footer-navbar">
           <Stack spacing={2} direction="row">
             <NavLink to={"/about"}>
-              <Button varient="text">About Us</Button>
+            {UnstyledButtonCustom("About Us")}
             </NavLink>
             <NavLink to={"/guidelines"}>
-              <Button varient="text">Community Guidelines</Button>
+            {UnstyledButtonCustom("Community Guidlines")}
             </NavLink>
             <NavLink to={"/contact"}>
-              <Button varient="text">Contact</Button>
+            {UnstyledButtonCustom("Contact")}
             </NavLink>
           </Stack>
         </Navbar>
