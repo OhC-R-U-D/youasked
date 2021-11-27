@@ -9,8 +9,11 @@ export default class QuestionShow extends Component {
       <div className="question-show-container">
         <Card>
           <CardContent>
-            <Typography sx={{ fontSize: "1.5vw" }}>
-              {`${question.user.alias}: ${question.post}`}
+            <Typography sx={{ fontSize: "2vw" }}>
+              <span
+                style={{ fontWeight: "bold", textAlign: "center" }}
+              >{`${question.user.alias}`}</span>
+              {`: ${question.post}`}
             </Typography>
           </CardContent>
 
@@ -21,7 +24,6 @@ export default class QuestionShow extends Component {
               image={question.img_url}
             />
           )}
-          <Typography sx={{ fontSize: "1.5vw" }}>Comments:</Typography>
           <AnswerIndex {...this.props} />
         </Card>
       </div>
