@@ -2,8 +2,6 @@ import * as React from "react";
 import { Card, CardContent, Paper, Grid, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import UnstyledButtonCustom from "./UnstyledButtonCustom";
-import Stack from "@mui/material/Stack";
-import SnackbarContent from "@mui/material/SnackbarContent";
 
 export default function MultiActionAreaCard(props) {
   return (
