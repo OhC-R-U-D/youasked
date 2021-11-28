@@ -10,13 +10,9 @@ export default class Answer extends Component {
         ? this.props.answer.user_id === this.props.current_user.id
         : "",
       form: {
-        comment: this.props.answer ? this.props.answer.comment : "",
-        question_id: this.props.answer
-          ? this.props.answer.question_id
-          : this.props.question.id,
-        user_id: this.props.answer
-          ? this.props.answer.user_id
-          : this.props.current_user.id,
+        comment: this.props.answer.comment,
+        question_id: this.props.answer.question_id,
+        user_id: this.props.answer.user_id,
       },
       isEditing: false,
     };
@@ -61,7 +57,7 @@ export default class Answer extends Component {
               )}
             </Grid>
             <Grid item>
-              {this.state.isEditable && (
+              {this.state.isEditable && !this.state.isEditing && (
                 <button onClick={this.toggleEdit}>
                   {" "}
                   <EditIcon />{" "}

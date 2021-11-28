@@ -9,7 +9,7 @@ export default class AnswerIndex extends Component {
       form: {
         comment: "",
         question_id: this.props.question.id,
-        user_id: this.props.current_user.id,
+        user_id: this.props.current_user ? this.props.current_user.id : "",
       },
     };
   }
@@ -45,7 +45,9 @@ export default class AnswerIndex extends Component {
             />
           );
         })}
-        <button onClick={this.toggleCreate}>Reply</button>
+        {!this.state.isCreating && this.props.current_user && (
+          <button onClick={this.toggleCreate}>Reply</button>
+        )}
         {this.state.isCreating && (
           <form onSubmit={this.handleSubmit}>
             <input onChange={this.handleChange} htmlFor="comment"></input>
