@@ -18,19 +18,19 @@ export default class Answer extends Component {
           ? this.props.answer.user_id
           : this.props.current_user.id,
       },
-      submitted: false,
       isEditing: false,
     };
   }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("form state", e);
     this.props.updateAnswer(
       { comment: this.state.form.comment },
       this.props.answer.id
     );
     this.toggleEdit();
   };
+
   handleChange = (e) => {
     let { form } = this.state;
     form.comment = e.target.value;
@@ -56,6 +56,7 @@ export default class Answer extends Component {
                 <form onSubmit={this.handleSubmit}>
                   <input onChange={this.handleChange} htmlFor="comment"></input>
                   <button type="submit">Submit</button>
+                  <button onClick={this.toggleEdit}>Cancel</button>
                 </form>
               )}
             </Grid>
