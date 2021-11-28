@@ -3,6 +3,7 @@ import landingpage from '../assets/landingpage.jpg'
 import landingmedia from '../assets/landingpage.gif'
 import Box from '@mui/material/Box';
 import logo from '../assets/logo.png'
+import { ImageBackground } from 'react'
 
 
 export default class Home extends Component {

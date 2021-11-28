@@ -57,6 +57,13 @@ header {
   text-align: center;
   margin: 0 4rem 0 4rem;
 }
+.team-pic{
+  align-items: center;
+  height: 200px;
+  width: 350px;
+  margin: 0 4rem 0 4rem;
+
+}
 
 .about-me-card {
   height: 100%;
@@ -95,6 +102,8 @@ header {
   color: darkslateblue;
   background-color: lightcyan;
 }
+
+
 // /* LANDING PAGE */
 .landing-container{
   width: 100%;
@@ -115,13 +124,15 @@ header {
   float: center;
 }
 .logo{
-  height: 100px;
-  width: 150px;
+  height: 150px;
+  width: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   float: left;
-  opacity: 60%;
+  opacity: 30%;
+  background-image: inherit;
+  
 }
 .landingmedia {
   height: 150px;
