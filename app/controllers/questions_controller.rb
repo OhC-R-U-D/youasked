@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
 
     def index 
         questions = Question.all 
-        render json: questions    
+        render json: questions, include: ['user']  
     end
 
     def create

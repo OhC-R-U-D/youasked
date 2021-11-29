@@ -8,6 +8,7 @@ import { Redirect } from "react-router-dom";
 
 
 
+
 export default class QuestionNew extends Component {
     constructor(props){
         super(props);
@@ -57,6 +58,8 @@ export default class QuestionNew extends Component {
                          <br />
                         <Button 
                         size="medium" 
+                        variant="contained"
+                        color="secondary"
                         onClick={this.handleSubmit}>Submit</Button>
                         {this.state.submitted && <Redirect to="/questionindex" />}
                    </div> 

@@ -10,7 +10,7 @@ export default class QuestionShow extends Component {
         <Card>
           <CardContent>
             <Typography sx={{ fontSize: "1.5vw" }}>
-              Question: {question.post}
+              {`${question.user.alias}: ${question.post}`}
             </Typography>
           </CardContent>
 
