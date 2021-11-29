@@ -109,7 +109,6 @@ class App extends React.Component {
         if (response.status === 422) {
           alert("You call that a question?! TRY AGAIN!");
         }
-        console.log("look at me", response);
         return response.json();
       })
       .then((payload) => this.questionRead())
@@ -199,6 +198,7 @@ class App extends React.Component {
                   answers={answers}
                   updateAnswer={this.updateAnswer}
                   createNewAnswer={this.createNewAnswer}
+                  current_user={this.props.current_user}
                 />
               );
             }}
