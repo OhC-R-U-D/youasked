@@ -12,7 +12,7 @@ describe("testing about us page", () => {
     expect(about.length).toEqual(1);
     expect(about.find("h1").text()).toEqual("Meet the Team");
     expect(about.find(".about-me-card").length).toEqual(4);
-    expect(about.find("img").length).toEqual(4);
+    expect(about.find("img").length).toEqual(5);
     expect(about.find(".about-me-card-content").length).toEqual(4);
   });
 });
