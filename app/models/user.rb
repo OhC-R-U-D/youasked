@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :questions
   has_many :answers
+  has_many :favorites
 
   
   validates :alias, presence: true, length: { minimum: 5 }, :uniqueness => {:message => 'already taken, alias must be unique'}
