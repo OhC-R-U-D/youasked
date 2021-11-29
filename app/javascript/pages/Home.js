@@ -15,7 +15,7 @@ export default class Home extends Component {
             sign_in_route,
             sign_out_route,
           } = this.props;
-        return (
+        return (            
             <div class="landing-container">
                 <div>
                 {!logged_in && (
