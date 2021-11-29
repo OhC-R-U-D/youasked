@@ -5,7 +5,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import { Navbar } from "reactstrap";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import UnstyledButtonCustom from "./UnstyledButtonCustom";
 
 export default class Header extends Component {
   render() {
@@ -24,16 +23,14 @@ export default class Header extends Component {
             <NavLink to={"/"}>
               <HomeIcon />
             </NavLink>
-            <NavLink
-              to={"/questionindex"}
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              {UnstyledButtonCustom("All Questions")}
+
+            <NavLink to={"/questionindex"}>
+              <Button variant="text">All Questions</Button>
             </NavLink>
 
             {logged_in && (
               <NavLink to={"/protectedindex"}>
-                {UnstyledButtonCustom("My Profile")}
+                <Button variant="text">My Profile</Button>
               </NavLink>
             )}
           </Stack>
@@ -43,21 +40,26 @@ export default class Header extends Component {
               <div>
                 {`Hello ${current_user.alias}!  `}
                 <a href={sign_out_route}>
-                {UnstyledButtonCustom("Sign Out")}
+                  <Button variant="contained"
+                    color="primary">Sign Out</Button>
                 </a>
               </div>
             )}
             {!logged_in && (
               <div>
                 <a href={sign_in_route}>
-                {UnstyledButtonCustom("Sign In")}
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    >Sign In</Button>
                 </a>
               </div>
             )}
             {!logged_in && (
               <div>
                 <a href={new_user_route}>
-                {UnstyledButtonCustom("Sign Up")}
+                  <Button variant="contained"
+                    color="primary">Sign Up</Button>
                 </a>
               </div>
             )}
