@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Stack from "@mui/material/Stack";
-import SnackbarContent from "@mui/material/SnackbarContent";
+import { Paper, Grid, Typography } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
 export default class Answer extends Component {
@@ -11,27 +10,23 @@ export default class Answer extends Component {
         ? this.props.answer.user_id === this.props.current_user.id
         : "",
       form: {
-        comment: this.props.answer ? this.props.answer.comment : "",
-        question_id: this.props.answer
-          ? this.props.answer.question_id
-          : this.props.question.id,
-        user_id: this.props.answer
-          ? this.props.answer.user_id
-          : this.props.current_user.id,
+        comment: this.props.answer.comment,
+        question_id: this.props.answer.question_id,
+        user_id: this.props.answer.user_id,
       },
-      submitted: false,
       isEditing: false,
     };
   }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("form state", e);
     this.props.updateAnswer(
       { comment: this.state.form.comment },
       this.props.answer.id
     );
     this.toggleEdit();
   };
+
   handleChange = (e) => {
     let { form } = this.state;
     form.comment = e.target.value;
@@ -43,24 +38,35 @@ export default class Answer extends Component {
   };
 
   render() {
+    const { answer } = this.props;
     return (
-      <Stack key={this.props.answer.id} spacing={2} sx={{ maxWidth: 600 }}>
-        <SnackbarContent message={this.props.answer.comment} />
-        <div>{this.props.answer.user.alias}</div>
-        {this.state.isEditable && ( //user matches current user
-          <button onClick={this.toggleEdit}>
-            {" "}
-            <EditIcon />{" "}
-          </button>
-        )}
-
-        {this.state.isEditing && (
-          <form onSubmit={this.handleSubmit}>
-            <input onChange={this.handleChange} htmlFor="comment"></input>
-            <button type="submit">Submit</button>
-          </form>
-        )}
-      </Stack>
+      <>
+        <Paper sx={{ my: 1, mx: "auto", p: 2 }}>
+          <Grid container wrap="nowrap" spacing={2}>
+            <Grid item xs>
+              <Typography>
+                <span style={{ fontWeight: "bold" }}>{answer.user.alias}</span>
+              </Typography>
+              <Typography>{!this.state.isEditing && answer.comment}</Typography>
+              {this.state.isEditing && (
+                <form onSubmit={this.handleSubmit}>
+                  <input onChange={this.handleChange} htmlFor="comment"></input>
+                  <button type="submit">Submit</button>
+                  <button onClick={this.toggleEdit}>Cancel</button>
+                </form>
+              )}
+            </Grid>
+            <Grid item>
+              {this.state.isEditable && !this.state.isEditing && (
+                <button onClick={this.toggleEdit}>
+                  {" "}
+                  <EditIcon />{" "}
+                </button>
+              )}
+            </Grid>
+          </Grid>
+        </Paper>
+      </>
     );
   }
 }

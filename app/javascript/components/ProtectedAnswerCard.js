@@ -1,17 +1,19 @@
 import * as React from "react";
-import { Card, CardContent } from "@mui/material";
+import { Card, CardContent, Paper, Grid, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import UnstyledButtonCustom from "./UnstyledButtonCustom";
-import Stack from "@mui/material/Stack";
-import SnackbarContent from "@mui/material/SnackbarContent";
 
 export default function MultiActionAreaCard(props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card key={props.answer.id} sx={{ maxWidth: 345 }}>
       <CardContent>
-        <Stack key={props.answer.id} spacing={2} sx={{ maxWidth: 600 }}>
-          <SnackbarContent message={props.answer.comment} />
-        </Stack>
+        <Paper sx={{ maxWidth: 400, my: 1, mx: "auto", p: 2 }}>
+          <Grid container wrap="nowrap" spacing={2}>
+            <Grid item xs>
+              <Typography>{props.answer.comment}</Typography>
+            </Grid>
+          </Grid>
+        </Paper>
       </CardContent>
       <div className="navlinks">
         <NavLink
