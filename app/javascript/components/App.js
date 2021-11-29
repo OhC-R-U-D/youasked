@@ -132,7 +132,11 @@ class App extends React.Component {
       <BrowserRouter>
         <Header {...this.props} />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/"
+            render={() => <Home logged_in={this.props.logged_in} />}
+          />
           <Route path="/about" component={AboutUsPage} />
           <Route path="/error" component={Page404} />
           <Route path="/guidelines" component={CommunityGuidelinesPage} />

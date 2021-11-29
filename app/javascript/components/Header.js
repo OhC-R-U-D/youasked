@@ -40,21 +40,26 @@ export default class Header extends Component {
               <div>
                 {`Hello ${current_user.alias}!  `}
                 <a href={sign_out_route}>
-                  <Button variant="text">Sign Out</Button>
+                  <Button variant="contained"
+                    color="primary">Sign Out</Button>
                 </a>
               </div>
             )}
             {!logged_in && (
               <div>
                 <a href={sign_in_route}>
-                  <Button variant="text">Sign In</Button>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    >Sign In</Button>
                 </a>
               </div>
             )}
             {!logged_in && (
               <div>
                 <a href={new_user_route}>
-                  <Button variant="text">Sign Up</Button>
+                  <Button variant="contained"
+                    color="primary">Sign Up</Button>
                 </a>
               </div>
             )}

@@ -7,6 +7,7 @@ import ashleyPic from "../assets/ashley.png";
 import kevinPic from "../assets/kevin.png";
 import rebeccaPic from "../assets/rebecca.png";
 import shaunPic from "../assets/shaun.png";
+import teamOhCrud from "../assets/Team_OhCrud.png";
 
 export default class AboutUsPage extends Component {
   render() {
@@ -43,6 +44,7 @@ export default class AboutUsPage extends Component {
     return (
       <div className="about-us-page">
         <h1>Meet the Team</h1>
+        <img src={teamOhCrud} alt="teamOhCrud" className="team-pic"/>
         <br />
         <br />
         <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
