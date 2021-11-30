@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import AnswerIndex from "../pages/AnswerIndex";
+import LikeThis from "../components/LikeThis";
 
 export default class QuestionShow extends Component {
   render() {
@@ -14,9 +15,10 @@ export default class QuestionShow extends Component {
                 style={{ fontWeight: "bold", textAlign: "center" }}
               >{`${question.user.alias}`}</span>
               {`: ${question.post}`}
+
             </Typography>
           </CardContent>
-
+          <LikeThis favorite_id={question.id} favorite_type={"Question"} user_id={this.props.current_user.id}/>
           {question.img_url && (
             <CardMedia
               component="img"
