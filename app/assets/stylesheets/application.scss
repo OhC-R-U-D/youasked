@@ -35,11 +35,19 @@ footer {
   font-size: 20px;
   margin: 4rem 0 0 0;
   background-color: #bdbdbd;
+
+  .MuiButton-root {
+    background-color: #504e4e;
+  }
+
+  .MuiButton-root:hover {
+    background-color: #ff69b4;
+  }
 }
 
 .footer-navbar {
   div.container-fluid {
-    justify-content: center;
+    justify-content: flex-end;
   }
 }
 
