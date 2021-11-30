@@ -16,7 +16,6 @@ describe("When QuestionIndex renders and a user is logged in", () => {
         questions={mockQuestion}
       />
     );
-    expect(questionIndex.length).toEqual(1);
     expect(questionIndex.find("NavLink").length).toEqual(1);
     expect(questionIndex.find("div").length).toEqual(1);
   });
@@ -27,7 +26,6 @@ describe("When QuestionIndex renders and a user is not logged in", () => {
     const questionIndex = shallow(
       <QuestionIndex current_user={false} questions={mockQuestion} />
     );
-    expect(questionIndex.length).toEqual(1);
     expect(questionIndex.find("NavLink").length).toEqual(0);
     expect(questionIndex.find("div").length).toEqual(1);
   });
