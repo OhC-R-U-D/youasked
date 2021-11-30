@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import ashleyPic from "../assets/ashley.png";
+import ashleyPic from "../assets/ashley.jpeg";
 import kevinPic from "../assets/kevin.png";
 import rebeccaPic from "../assets/rebecca.png";
 import shaunPic from "../assets/shaun.png";
@@ -17,7 +17,7 @@ export default class AboutUsPage extends Component {
         name: "Ashley Lappies",
         img: ashleyPic,
         blurb:
-          "Sandy is a thrill seeker who loves extreme sports and karate. Having come from the state of Texas, she has a Southern drawl and a love for rodeos. She works as a scientist and built both her treedome and air suit herself. She is also a member of the Gal Pals along with Karen, Mrs. Puff, and Pearl.",
+          "Ashley Mariko Lappies, San Diego native, has had a LONG restaurant and hospitality career and is ready to jump behind a computor, push her glasses up her nose, and never look back. Her favorite hobbies are reading sci-fi novels, hiking just about any terrain and watching tiktok until she passes out. ",
       },
       {
         id: 2,
