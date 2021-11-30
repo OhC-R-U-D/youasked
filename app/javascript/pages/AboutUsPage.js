@@ -24,7 +24,7 @@ export default class AboutUsPage extends Component {
         name: "Kevin Silver",
         img: kevinPic,
         blurb:
-          "Eugene Harold Krabs, more commonly known as Mr. Krabs born November 30, 1942, is one of the ten main characters in the SpongeBob SquarePants franchise. He is a red crab who lives in an anchor with his daughter, Pearl, who is a young whale. He is the owner and founder of the Krusty Krab restaurant as well as the employer of both SpongeBob and Squidward.",
+          "Kevin was the Product Manager on the OhCrud! FullStack, Junior Development team. He assisted in many tasks throughout the You Asked? App build. Working on this team was very exciting.  He was able to learn a lot from his fellow teammates. He is most proud of his ability to incorporate a third party supported email service in order to build a React contact form without a backend.  In addition, he was able to bond with his son (borrow his design skills) to create the Team and App logos.",
       },
       {
         id: 3,
@@ -44,7 +44,7 @@ export default class AboutUsPage extends Component {
     return (
       <div className="about-us-page">
         <h1>Meet the Team</h1>
-        <img src={teamOhCrud} alt="teamOhCrud" className="team-pic"/>
+        <img src={teamOhCrud} alt="teamOhCrud" className="team-pic" />
         <br />
         <br />
         <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
@@ -52,15 +52,14 @@ export default class AboutUsPage extends Component {
             return (
               <Grid key={person.id} item xs={6}>
                 <Card className="about-me-card" sx={{ minWidth: 275 }}>
-                    <CardContent className="about-me-card-content">
-                      <Typography variant="h5" component="div">
-                        {person.name}
-                      </Typography>
-                      <img src={person.img} alt="person" />
+                  <CardContent className="about-me-card-content">
+                    <Typography variant="h5" component="div">
+                      {person.name}
+                    </Typography>
+                    <img src={person.img} alt="person" />
 
-                      <Typography variant="body2">{person.blurb}</Typography>
-
-                    </CardContent>
+                    <Typography variant="body2">{person.blurb}</Typography>
+                  </CardContent>
                 </Card>
               </Grid>
             );

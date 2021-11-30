@@ -80,8 +80,8 @@ header {
 .guide-title {
   right: 0;
   text-align: center;
-  color: whitesmoke;
-  background-color: darkcyan;
+  color: #ff69b4;
+  background-color: black;
   display: grid;
   justify-content: space-evenly;
   overflow: hidden;
@@ -89,14 +89,20 @@ header {
 
 .guide-body {
   text-align: left;
-  font-size: medium;
-  background-color: lightcyan;
+  font-size: large;
+  color: rgb(239, 230, 125);
+  background-color: #15aabe;
 }
 
 .guide-article {
   text-align: center;
-  color: darkslateblue;
-  background-color: lightcyan;
+  color: black;
+  background-color: #ff69b4;
+}
+
+.a-tag {
+  font-size: x-large;
+  color: #ff69b4;
 }
 
 // /* LANDING PAGE */
@@ -120,7 +126,7 @@ header {
   align-items: flex-start;
   justify-content: center;
   .logo {
-    opacity: 30%;
+    opacity: 100%;
     max-width: 500px;
     max-height: 700px;
     width: auto;
@@ -163,9 +169,10 @@ header {
 
 .guide-section {
   text-align: center;
+  font-size: x-large;
   font-style: italic;
   color: whitesmoke;
-  background-color: darkcyan;
+  background-color: #15aabe;
 }
 
 // * Questions New Form */
