@@ -6,10 +6,10 @@ import Home from "./Home";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("testing Home Page", () => {
-  it("should render, has an h1 header, has 4 cards, 4 images, and 4 card bodies ", () => {
+  it("should render, 3 images, and 1 Box wraper", () => {
     const home = shallow(<Home />);
     expect(home.length).toEqual(1);
-    expect(home.find(".landing-quote").length).toEqual(1);
+    const boxWrapper = home.find("Box");
     expect(home.find("img").length).toEqual(3);
   });
 });
