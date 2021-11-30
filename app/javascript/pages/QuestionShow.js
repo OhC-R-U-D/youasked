@@ -15,10 +15,14 @@ export default class QuestionShow extends Component {
                 style={{ fontWeight: "bold", textAlign: "center" }}
               >{`${question.user.alias}`}</span>
               {`: ${question.post}`}
-
             </Typography>
+            <LikeThis
+              favorite_id={question.id}
+              favorite_type={"Question"}
+              user_id={this.props.current_user.id}
+            />
+            {/* Create get request for favorites, creation of State to store favorites, filtering through favorites to find where current_user.id === favorite.user_id && question.id === favorite.favorite_id && favorite_type === "Question" */}
           </CardContent>
-          <LikeThis favorite_id={question.id} favorite_type={"Question"} user_id={this.props.current_user.id}/>
           {question.img_url && (
             <CardMedia
               component="img"
