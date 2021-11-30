@@ -22,6 +22,10 @@
 * {
   font-family: "Ubuntu";
 }
+
+a {
+  text-decoration: none !important;
+}
 body {
   background: #504e4e;
 }
@@ -43,6 +47,47 @@ footer {
 
 header {
   margin: 0 0 4rem 0;
+
+  .home-icon {
+    color: #504e4e;
+  }
+
+  .home-icon {
+    :hover {
+      color: #ff69b4;
+    }
+  }
+
+  .user-name {
+    color: #504e4e;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .all-questions-link {
+    color: #504e4e;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+  .all-questions-link:hover {
+    color: #ff69b4;
+  }
+
+  .MuiButton-root {
+    background-color: #504e4e;
+  }
+
+  .MuiButton-root:hover {
+    background-color: #ff69b4;
+  }
+
+  .css-e53awj-MuiStack-root,
+  .css-u10pvi-MuiStack-root {
+    align-items: baseline;
+  }
 }
 
 .navbar {
