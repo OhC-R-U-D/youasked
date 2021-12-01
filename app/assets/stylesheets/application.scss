@@ -372,7 +372,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    .MuiButton-root {
+    .MuißButton-root {
       background-color: #504e4e;
     }
 
@@ -383,7 +383,18 @@ h1 {
 }
 
 // Answers
-.edit-answer-form {
+
+.edit-bttn {
+  border: none;
+  background: transparent;
+  color: #504e4e;
+
+  :hover {
+    color: #ff69b4;
+  }
+}
+
+.answer-form {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -395,6 +406,17 @@ h1 {
 
   .MuiButton-root:hover {
     margin-left: 10px;
+    background-color: #ff69b4;
+  }
+}
+
+//AnswerIndex
+.button-wrapper {
+  .MuiButton-root {
+    background-color: #504e4e;
+  }
+
+  .MuiButton-root:hover {
     background-color: #ff69b4;
   }
 }

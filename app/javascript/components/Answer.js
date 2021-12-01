@@ -47,7 +47,7 @@ export default class Answer extends Component {
               <Typography>
                 <span style={{ fontWeight: "bold" }}>{answer.user.alias}</span>
               </Typography>
-              <div className="edit-answer-form">
+              <div className="answer-form">
                 <Typography>
                   {!this.state.isEditing && answer.comment}
                 </Typography>
@@ -77,7 +77,7 @@ export default class Answer extends Component {
             </Grid>
             <Grid item>
               {this.state.isEditable && !this.state.isEditing && (
-                <button onClick={this.toggleEdit}>
+                <button className="edit-bttn" onClick={this.toggleEdit}>
                   {" "}
                   <EditIcon />{" "}
                 </button>

@@ -29,7 +29,9 @@ export default function MultiActionAreaCard(props) {
           to={`/questionshow/${props.question.id}`}
           style={{ textDecoration: "none", color: "inherit" }}
         >
-          {UnstyledButtonCustom("See Answers")}
+          <Button size="small" variant="contained">
+            See Answers
+          </Button>
         </NavLink>
         <a
           style={{ textDecoration: "none", color: "inherit" }}
@@ -38,7 +40,9 @@ export default function MultiActionAreaCard(props) {
               props.deleteQuestion(props.question.id);
           }}
         >
-          {UnstyledButtonCustom("Delete Question")}
+          <Button size="small" variant="contained">
+            Delete Question
+          </Button>
         </a>
       </div>
     </Card>
