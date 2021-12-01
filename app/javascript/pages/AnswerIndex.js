@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Answer from "../components/Answer";
+import { Button } from "@mui/material";
 
 export default class AnswerIndex extends Component {
   constructor(props) {
@@ -46,14 +47,36 @@ export default class AnswerIndex extends Component {
           );
         })}
         {!this.state.isCreating && this.props.current_user && (
-          <button onClick={this.toggleCreate}>Reply</button>
+          <div className="button-wrapper">
+            <Button
+              size="small"
+              variant="contained"
+              onClick={this.toggleCreate}
+            >
+              Reply
+            </Button>
+          </div>
         )}
         {this.state.isCreating && (
-          <form onSubmit={this.handleSubmit}>
-            <input onChange={this.handleChange} htmlFor="comment"></input>
-            <button type="submit">Submit</button>
-            <button onClick={this.toggleCreate}>Cancel</button>
-          </form>
+          <div className="answer-form">
+            <form>
+              <input onChange={this.handleChange} htmlFor="comment"></input>
+              <Button
+                size="small"
+                variant="contained"
+                onClick={this.handleSubmit}
+              >
+                Submit
+              </Button>
+              <Button
+                size="small"
+                variant="contained"
+                onClick={this.toggleCreate}
+              >
+                Cancel
+              </Button>
+            </form>
+          </div>
         )}
       </div>
     );

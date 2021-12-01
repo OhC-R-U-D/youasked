@@ -7,11 +7,10 @@ import {
   Button,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import UnstyledButtonCustom from "./UnstyledButtonCustom";
 
 export default function MultiActionAreaCard(props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 360 }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {props.question.post}
@@ -29,7 +28,9 @@ export default function MultiActionAreaCard(props) {
           to={`/questionshow/${props.question.id}`}
           style={{ textDecoration: "none", color: "inherit" }}
         >
-          {UnstyledButtonCustom("See Answers")}
+          <Button size="small" variant="contained">
+            See Answers
+          </Button>
         </NavLink>
         <a
           style={{ textDecoration: "none", color: "inherit" }}
@@ -38,7 +39,9 @@ export default function MultiActionAreaCard(props) {
               props.deleteQuestion(props.question.id);
           }}
         >
-          {UnstyledButtonCustom("Delete Question")}
+          <Button size="small" variant="contained">
+            Delete
+          </Button>
         </a>
       </div>
     </Card>

@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-
 import { NavLink } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import { Navbar } from "reactstrap";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+import { Stack, Button } from "@mui/material";
 
 export default class Header extends Component {
   render() {
@@ -21,47 +19,52 @@ export default class Header extends Component {
         <Navbar expand fixed="top">
           <Stack spacing={2} direction="row">
             <NavLink to={"/"}>
-              <HomeIcon />
+              <span className="home-icon">
+                {" "}
+                <HomeIcon fontSize="large" />{" "}
+              </span>
             </NavLink>
 
             <NavLink to={"/questionindex"}>
-              <Button variant="text">All Questions</Button>
+              <Button size="medium" variant="contained">
+                See Questions
+              </Button>
             </NavLink>
-
-            {logged_in && (
-              <NavLink to={"/protectedindex"}>
-                <Button variant="text">My Profile</Button>
-              </NavLink>
-            )}
           </Stack>
 
-          <Stack spacing={2} direction="row">
+          <Stack spacing={3} direction="row">
             {logged_in && (
-              <div>
-                {`Hello ${current_user.alias}!  `}
-                <a href={sign_out_route}>
-                  <Button variant="contained"
-                    color="primary">Sign Out</Button>
-                </a>
-              </div>
+              <span className="user-name">{`Hello ${current_user.alias}!  `}</span>
+            )}
+            {logged_in && (
+              <NavLink to={"/protectedindex"}>
+                <Button size="medium" variant="contained">
+                  My Profile
+                </Button>
+              </NavLink>
+            )}
+            {logged_in && (
+              <a href={sign_out_route}>
+                <Button size="medium" variant="contained">
+                  Sign Out
+                </Button>
+              </a>
             )}
             {!logged_in && (
               <div>
                 <a href={sign_in_route}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    >Sign In</Button>
+                  <Button size="medium" variant="contained">
+                    Log In
+                  </Button>
                 </a>
               </div>
             )}
             {!logged_in && (
-              <div>
-                <a href={new_user_route}>
-                  <Button variant="contained"
-                    color="primary">Sign Up</Button>
-                </a>
-              </div>
+              <a href={new_user_route}>
+                <Button size="medium" variant="contained">
+                  Sign Up
+                </Button>
+              </a>
             )}
           </Stack>
         </Navbar>

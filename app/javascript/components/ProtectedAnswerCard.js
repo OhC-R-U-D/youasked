@@ -1,11 +1,17 @@
 import * as React from "react";
-import { Card, CardContent, Paper, Grid, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Paper,
+  Grid,
+  Typography,
+  Button,
+} from "@mui/material";
 import { NavLink } from "react-router-dom";
-import UnstyledButtonCustom from "./UnstyledButtonCustom";
 
 export default function MultiActionAreaCard(props) {
   return (
-    <Card key={props.answer.id} sx={{ maxWidth: 345 }}>
+    <Card key={props.answer.id} sx={{ maxWidth: 360 }}>
       <CardContent>
         <Paper sx={{ maxWidth: 400, my: 1, mx: "auto", p: 2 }}>
           <Grid container wrap="nowrap" spacing={2}>
@@ -20,7 +26,9 @@ export default function MultiActionAreaCard(props) {
           to={`/questionshow/${props.answer.question_id}`}
           style={{ textDecoration: "none", color: "inherit" }}
         >
-          {UnstyledButtonCustom("See Question")}
+          <Button size="small" variant="contained">
+            See Question
+          </Button>
         </NavLink>
         <a
           style={{ textDecoration: "none", color: "inherit" }}
@@ -29,7 +37,9 @@ export default function MultiActionAreaCard(props) {
               props.deleteAnswer(props.answer.id);
           }}
         >
-          {UnstyledButtonCustom("Delete Answer")}
+          <Button size="small" variant="contained">
+            Delete
+          </Button>
         </a>
       </div>
     </Card>

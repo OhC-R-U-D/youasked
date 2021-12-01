@@ -190,7 +190,7 @@ class App extends React.Component {
               let id = props.match.params.id;
               let question = this.state.questions.find((c) => c.id === +id);
               let answers = this.state.answers.filter(
-                (answer) => answer.question_id === +id
+                (answer) => answer.question_id === +id 
               );
               return (
                 <QuestionShow

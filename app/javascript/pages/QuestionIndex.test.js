@@ -17,7 +17,7 @@ describe("When QuestionIndex renders and a user is logged in", () => {
       />
     );
     expect(questionIndex.find("NavLink").length).toEqual(1);
-    expect(questionIndex.find("div").length).toEqual(1);
+    expect(questionIndex.find("div").length).toEqual(2);
   });
 });
 
@@ -27,6 +27,6 @@ describe("When QuestionIndex renders and a user is not logged in", () => {
       <QuestionIndex current_user={false} questions={mockQuestion} />
     );
     expect(questionIndex.find("NavLink").length).toEqual(0);
-    expect(questionIndex.find("div").length).toEqual(1);
+    expect(questionIndex.find("div").length).toEqual(2);
   });
 });
