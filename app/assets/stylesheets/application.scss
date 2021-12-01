@@ -29,6 +29,7 @@ a {
 body {
   background: #504e4e;
 }
+
 // /*  FOOTER  */
 
 footer {
@@ -240,6 +241,19 @@ header {
 }
 
 // /* QUESTION INDEX PAGE */
+.question-index-button {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+
+  .MuiButton-root {
+    color: #ff69b4;
+  }
+
+  .MuiButton-root:hover {
+    background-color: #df5c9e4a;
+  }
+}
 .question-index-container {
   .MuiCardContent-root {
     text-align: center;
@@ -299,6 +313,10 @@ header {
   flex-direction: row;
   justify-content: space-around;
 
+  h1 {
+    color: white;
+  }
+
   .MuiPaper-root {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
       rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
@@ -324,10 +342,24 @@ header {
   #profileCol {
     display: flex;
     flex-direction: column;
+    .MuiButton-root {
+      color: #ff69b4;
+    }
+
+    .MuiButton-root:hover {
+      background-color: #df5c9e4a;
+    }
   }
   #QACol {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    .MuiButton-root {
+      background-color: #504e4e;
+    }
+
+    .MuiButton-root:hover {
+      background-color: #ff69b4;
+    }
   }
 }
