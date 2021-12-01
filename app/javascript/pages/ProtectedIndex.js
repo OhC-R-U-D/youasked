@@ -11,6 +11,7 @@ export default class ProtectedIndex extends Component {
         <div className="protected-index-container">
           <div id="profileCol">
             <h1>My Profile</h1>
+
             <NavLink to={"/questionnew"}>
               <Button variant="outline">Ask Question</Button>
             </NavLink>
