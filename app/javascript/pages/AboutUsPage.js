@@ -35,10 +35,10 @@ export default class AboutUsPage extends Component {
       },
       {
         id: 4,
-        name: "Shaun Sharp",
+        name: "Shaun",
         img: shaunPic,
         blurb:
-          "SpongeBob SquarePants born July 14, 1986 is the one of the ten main characters of the animated franchise of the same name. SpongeBob is a childish, joyful, and clumsy sea sponge who lives in a pineapple with his pet snail Gary in the underwater city of Bikini Bottom. SpongeBob is very good-natured and loves to hang out with his best friend Patrick.",
+          "Shaun hates hugs, allegedly. Newbie in tech but a natural mastermind. If he is not rehearsing choreography with his plants, you can find him...um where did he go?",
       },
     ];
     return (
