@@ -381,3 +381,20 @@ h1 {
     }
   }
 }
+
+// Answers
+.edit-answer-form {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  .MuiButton-root {
+    margin-left: 10px;
+    background-color: #504e4e;
+  }
+
+  .MuiButton-root:hover {
+    margin-left: 10px;
+    background-color: #ff69b4;
+  }
+}
