@@ -16,7 +16,9 @@ export default class CommunityGuideLinesPage extends Component {
           </p>
           <p>
             We encourage your feedback and aim to respond to your {""}
-            <a href="/contact">comments</a>
+            <a className="a-tag" href="/contact">
+              comments
+            </a>
             {""} as soon as possible.
           </p>
           <p>
@@ -60,10 +62,10 @@ export default class CommunityGuideLinesPage extends Component {
             recommend that you don’t post any information that may identify you
             or anyone else, such as your address, email address or phone number.{" "}
           </ol>
-          <h5>
+          <h2>
             If you a question about our services or policies, please get in
             touch via our contact page.
-          </h5>
+          </h2>
         </section>
       </div>
     );

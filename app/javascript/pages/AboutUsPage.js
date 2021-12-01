@@ -24,27 +24,27 @@ export default class AboutUsPage extends Component {
         name: "Kevin Silver",
         img: kevinPic,
         blurb:
-          "Eugene Harold Krabs, more commonly known as Mr. Krabs born November 30, 1942, is one of the ten main characters in the SpongeBob SquarePants franchise. He is a red crab who lives in an anchor with his daughter, Pearl, who is a young whale. He is the owner and founder of the Krusty Krab restaurant as well as the employer of both SpongeBob and Squidward.",
+          "Kevin was the Product Manager on the OhCrud! FullStack, Junior Development team. He assisted in many tasks throughout the You Asked? App build. Working on this team was very exciting.  He was able to learn a lot from his fellow teammates. He is most proud of his ability to incorporate a third party supported email service in order to build a React contact form without a backend.  In addition, he was able to bond with his son (borrow his design skills) to create the Team and App logos.",
       },
       {
         id: 3,
         name: "Rebecca Reynolds",
         img: rebeccaPic,
         blurb:
-          "Meyaiovah! Mee hoy minoy! Meah froyay! Neofineyin! Meyaiovah! Mee hoy minoy! Meah froyay! Neofineyin! Meyaiovah! Mee hoy minoy! Meah froyay! Neofineyin! Meyaiovah! Mee hoy minoy! Meah froyay! Neofineyin! Meyaiovah! Mee hoy minoy! Meah froyay! Neofineyin!",
+          "Tech lead of the Oh CRUD! team. Former capital asset accountant now turned full stack software developer, Rebecca is excited about problem solving and continous learning. She strives to write concise code and create memorable user experiences. In her free time she likes to boulder, find awesome eateries, and spend time with her family/cats.",
       },
       {
         id: 4,
-        name: "Shaun Sharp",
+        name: "Shaun",
         img: shaunPic,
         blurb:
-          "SpongeBob SquarePants born July 14, 1986 is the one of the ten main characters of the animated franchise of the same name. SpongeBob is a childish, joyful, and clumsy sea sponge who lives in a pineapple with his pet snail Gary in the underwater city of Bikini Bottom. SpongeBob is very good-natured and loves to hang out with his best friend Patrick.",
+          "Shaun hates hugs, allegedly. Newbie in tech but a natural mastermind. If he is not rehearsing choreography with his plants, you can find him...um where did he go?",
       },
     ];
     return (
       <div className="about-us-page">
         <h1>Meet the Team</h1>
-        <img src={teamOhCrud} alt="teamOhCrud" className="team-pic"/>
+        <img src={teamOhCrud} alt="teamOhCrud" className="team-pic" />
         <br />
         <br />
         <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
@@ -52,15 +52,14 @@ export default class AboutUsPage extends Component {
             return (
               <Grid key={person.id} item xs={6}>
                 <Card className="about-me-card" sx={{ minWidth: 275 }}>
-                    <CardContent className="about-me-card-content">
-                      <Typography variant="h5" component="div">
-                        {person.name}
-                      </Typography>
-                      <img src={person.img} alt="person" />
+                  <CardContent className="about-me-card-content">
+                    <Typography variant="h5" component="div">
+                      {person.name}
+                    </Typography>
+                    <img src={person.img} alt="person" />
 
-                      <Typography variant="body2">{person.blurb}</Typography>
-
-                    </CardContent>
+                    <Typography variant="body2">{person.blurb}</Typography>
+                  </CardContent>
                 </Card>
               </Grid>
             );

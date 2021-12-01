@@ -7,11 +7,15 @@ export default class QuestionIndex extends Component {
   render() {
     return (
       <>
-        {this.props.current_user && (
-          <NavLink to={"/questionnew"}>
-            <Button variant="text">ADD QUESTION</Button>
-          </NavLink>
-        )}
+        <div className="question-index-button">
+          {this.props.current_user && (
+            <NavLink to={"/questionnew"}>
+              <Button size="large" variant="text">
+                ASK A QUESTION!
+              </Button>
+            </NavLink>
+          )}
+        </div>
         <div className="question-index-container">
           {this.props.questions &&
             this.props.questions.map((question) => {

@@ -57,12 +57,7 @@ export default class QuestionNew extends Component {
             value={this.state.form.post}
           />
           <br />
-          <Button
-            size="medium"
-            variant="contained"
-            color="secondary"
-            onClick={this.handleSubmit}
-          >
+          <Button size="medium" variant="contained" onClick={this.handleSubmit}>
             Submit
           </Button>
           {this.state.submitted && <Redirect to="/questionindex" />}

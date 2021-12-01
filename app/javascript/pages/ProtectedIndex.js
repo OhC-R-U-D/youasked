@@ -13,7 +13,7 @@ export default class ProtectedIndex extends Component {
             <h1>My Profile</h1>
 
             <NavLink to={"/questionnew"}>
-              <Button variant="outline">Ask Question</Button>
+              <Button variant="outline">Ask a Question!</Button>
             </NavLink>
           </div>
           <div id="QACol">

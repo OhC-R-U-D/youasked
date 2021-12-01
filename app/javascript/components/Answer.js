@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Paper, Grid, Typography } from "@mui/material";
+import { Paper, Grid, Typography, Button } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
 export default class Answer extends Component {
@@ -47,18 +47,37 @@ export default class Answer extends Component {
               <Typography>
                 <span style={{ fontWeight: "bold" }}>{answer.user.alias}</span>
               </Typography>
-              <Typography>{!this.state.isEditing && answer.comment}</Typography>
-              {this.state.isEditing && (
-                <form onSubmit={this.handleSubmit}>
-                  <input onChange={this.handleChange} htmlFor="comment"></input>
-                  <button type="submit">Submit</button>
-                  <button onClick={this.toggleEdit}>Cancel</button>
-                </form>
-              )}
+              <div className="answer-form">
+                <Typography>
+                  {!this.state.isEditing && answer.comment}
+                </Typography>
+                {this.state.isEditing && (
+                  <form>
+                    <input
+                      onChange={this.handleChange}
+                      htmlFor="comment"
+                    ></input>
+                    <Button
+                      size="small"
+                      variant="contained"
+                      onClick={this.handleSubmit}
+                    >
+                      Submit
+                    </Button>
+                    <Button
+                      size="small"
+                      variant="contained"
+                      onClick={this.toggleEdit}
+                    >
+                      Cancel
+                    </Button>
+                  </form>
+                )}
+              </div>
             </Grid>
             <Grid item>
               {this.state.isEditable && !this.state.isEditing && (
-                <button onClick={this.toggleEdit}>
+                <button className="edit-bttn" onClick={this.toggleEdit}>
                   {" "}
                   <EditIcon />{" "}
                 </button>
