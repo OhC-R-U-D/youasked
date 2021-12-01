@@ -104,6 +104,9 @@ header {
 }
 
 // About Us Page
+h1 {
+  color: white;
+}
 .about-us-page {
   text-align: center;
   margin: 0 4rem 0 4rem;
@@ -234,10 +237,19 @@ header {
 #form {
   text-align: center;
   width: 500px;
-  height: 600px;
+  height: 650px;
   border: 15px solid rgb(25, 179, 196);
+  border-radius: 2%;
   padding: 50px;
   margin: 0 auto;
+
+  .MuiButton-root {
+    background-color: #ff69b4;
+  }
+
+  .MuiButton-root:hover {
+    background-color: #ff69b464;
+  }
 }
 
 // /* QUESTION INDEX PAGE */
