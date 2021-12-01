@@ -31,7 +31,7 @@ export default class AboutUsPage extends Component {
         name: "Rebecca Reynolds",
         img: rebeccaPic,
         blurb:
-          "Tech lead of the Oh CRUD! team. Former capital asset accountant now turned full stack software developer, Rebecca is excited about problem solving and continous learning. She strives to write concise efficient code and create memorable user experiences. In her free time she likes to boulder, find awesome eateries, and spend time with her family/cats.",
+          "Tech lead of the Oh CRUD! team. Former capital asset accountant now turned full stack software developer, Rebecca is excited about problem solving and continous learning. She strives to write concise code and create memorable user experiences. In her free time she likes to boulder, find awesome eateries, and spend time with her family/cats.",
       },
       {
         id: 4,
