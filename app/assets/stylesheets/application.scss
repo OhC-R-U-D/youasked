@@ -303,10 +303,14 @@ h1 {
 
 #container {
   background-color: #bdbdbd;
-  width: 300px;
+  width: 20rem;
   border: 15px solid rgb(25, 179, 196);
   padding: 50px;
-  margin: 0 auto;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 #login-header {
