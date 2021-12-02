@@ -4,7 +4,6 @@ import landingmedia from "../assets/landingpage.gif";
 import Box from "@mui/material/Box";
 import logo from "../assets/logo.png";
 
-
 export default class Home extends Component {
   render() {
     const {
@@ -32,11 +31,11 @@ export default class Home extends Component {
           </div>
           <div>
             <Box
-              class="landing-quote"
+              className="landing-quote"
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                borderRadius: 16,
+                borderRadius: 4,
               }}
             >
               <p>

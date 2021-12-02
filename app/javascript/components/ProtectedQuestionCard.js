@@ -11,25 +11,23 @@ import { NavLink } from "react-router-dom";
 export default function MultiActionAreaCard(props) {
   return (
     <Card sx={{ maxWidth: 360 }}>
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {props.question.post}
-        </Typography>
-      </CardContent>
       {props.question.img_url && (
         <CardMedia
           component="img"
-          height="250"
+          sx={{ maxWidth: "200px" }}
           image={props.question.img_url}
         />
       )}
+      <Typography gutterBottom variant="h5" component="div">
+        {props.question.post}
+      </Typography>
       <div className="navlinks">
         <NavLink
           to={`/questionshow/${props.question.id}`}
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <Button size="small" variant="contained">
-            See Answers
+            Answers
           </Button>
         </NavLink>
         <a
