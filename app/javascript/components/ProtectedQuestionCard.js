@@ -12,17 +12,17 @@ export default function MultiActionAreaCard(props) {
   return (
     <Card sx={{ maxWidth: 360 }}>
       <CardContent>
+        {props.question.img_url && (
+          <CardMedia
+            component="img"
+            sx={{ maxHeight: "250" }}
+            image={props.question.img_url}
+          />
+        )}
         <Typography gutterBottom variant="h5" component="div">
           {props.question.post}
         </Typography>
       </CardContent>
-      {props.question.img_url && (
-        <CardMedia
-          component="img"
-          height="250"
-          image={props.question.img_url}
-        />
-      )}
       <div className="navlinks">
         <NavLink
           to={`/questionshow/${props.question.id}`}
