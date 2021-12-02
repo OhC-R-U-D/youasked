@@ -12,7 +12,7 @@ export default function MultiActionAreaCard(props) {
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <Button size="small" variant="contained">
-            See Question
+            Question
           </Button>
         </NavLink>
         <a
